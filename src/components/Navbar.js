@@ -96,6 +96,14 @@ const Navbar = () => {
                             <List.Item
                                 className={classes.link}
                                 component={Link}
+                                to="/"
+                                icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-house"></i></ActionIcon>}>
+                                Home
+                            </List.Item>
+
+                            <List.Item
+                                className={classes.link}
+                                component={Link}
                                 to="/produkter/dagvatten"
                                 icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-shop"></i></ActionIcon>}>
                                 Produkter

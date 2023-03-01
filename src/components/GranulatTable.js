@@ -43,7 +43,7 @@ const GranulatTable = () => {
         <tr key={row.id}>
             <td>{row.id}</td>
             <td>{row.well} mm</td>
-            <td>{row.length} mm</td>
+            {/* <td>{row.length} mm</td> */}
             <td>Bark/flis</td>
         </tr>
     ));
@@ -55,7 +55,7 @@ const GranulatTable = () => {
                     <tr>
                         <th>Artikelnummer</th>
                         <th>Passar till brunn</th>
-                        <th>Filterlängd</th>
+                        {/* <th>Filterlängd</th> */}
                         <th>Filtertyp</th>
                     </tr>
                 </thead>

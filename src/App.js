@@ -38,7 +38,7 @@ function App() {
           <Route path='/produkter/dagvatten' element={<DagvattenView />} />
           <Route path='/produkter/granulat' element={<GranulatView />} />
         </Routes>
-        
+
         <Footer />
       </MantineProvider>
 

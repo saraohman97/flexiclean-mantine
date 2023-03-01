@@ -93,9 +93,28 @@
         {
             "granulat": [
                 {
-                    "id": "100100 FC118SA",
+                    "id": "200100 FC 408 Granulat",
                     "well": "350-450",
-                    "length": "600",
+                    "type": ""
+                },
+                {
+                    "id": "200102 FC 508 Granulat",
+                    "well": "500",
+                    "type": ""
+                },
+                {
+                    "id": "200103 FC 608 Granulat",
+                    "well": "600",
+                    "type": ""
+                },
+                {
+                    "id": "200104 FC 1008 Granulat",
+                    "well": "1000",
+                    "type": ""
+                },
+                {
+                    "id": "100113 Filterdyna 600mm",
+                    "well": "600",
                     "type": ""
                 }
             ]
