@@ -1,6 +1,6 @@
 import { Container, createStyles, Flex, Image, Text, Title } from '@mantine/core'
 import React from 'react'
-import GranulatTable from '../components/GranulatTable'
+import GranulatTable from '../components/tables/GranulatTable'
 import Navbar from '../components/Navbar'
 
 const useStyles = createStyles((theme) => ({

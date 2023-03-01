@@ -132,6 +132,14 @@ const Navbar = () => {
                                 </List.Item>
 
                                 <List.Item
+                                    className={classes.link}
+                                    component={Link}
+                                    to='/produkter/annat'
+                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-location-dot"></i></ActionIcon>}>
+                                    Stora och små projekt
+                                </List.Item>
+
+                                <List.Item
                                 className={classes.link}
                                 component={Link}
                                 to='/instruktioner'
@@ -201,6 +209,16 @@ const Navbar = () => {
                                 component={Link}
                                 icon={<ActionIcon mr='10px' size={14} color='blue'><i className="fa-solid fa-location-dot"></i></ActionIcon>}>
                                 Granulat
+                            </Menu.Item>
+
+                            <Menu.Divider />
+
+                            <Menu.Item
+                                color='gray'
+                                to='/produkter/annat'
+                                component={Link}
+                                icon={<ActionIcon mr='10px' size={14} color='blue'><i className="fa-solid fa-location-dot"></i></ActionIcon>}>
+                                Stora och små projekt
                             </Menu.Item>
 
                             <Menu.Divider />

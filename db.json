@@ -118,6 +118,25 @@
                     "type": ""
                 }
             ]
+        },
+        {
+            "filterbrunnar": [
+                {
+                    "id": "79 122. Filterbrunn Dagvatten DN600",
+                    "amount": "2",
+                    "capacity": "19"
+                },
+                {
+                    "id": "79 123. Filterbrunn Dagvatten DN1000",
+                    "amount": "3",
+                    "capacity": "29"
+                },
+                {
+                    "id": "79 124. Filterbrunn Dagvatten DN1200",
+                    "amount": "4",
+                    "capacity": "38"
+                }
+            ]
         }
     ],
     "documentation": [

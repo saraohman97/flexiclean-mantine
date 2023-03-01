@@ -1,21 +1,21 @@
 import { Button, Container, Flex, Text, Title } from '@mantine/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CardsCarousel from '../components/CardsCarousel'
+import CardsCarousel from '../components/carousels/CardsCarousel'
 import Navbar from '../components/Navbar'
-import DagvattenTable from '../components/DagvattenTable'
+import DagvattenTable from '../components/tables/DagvattenTable'
 
 const DagvattenView = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
 
-    <Container>
+      <Container>
         <Flex my='lg' gap='lg' direction='column'>
 
           <CardsCarousel />
-          
+
           <div>
             <Title my='lg'>FlexiCleans filterkassett för dagvattenrening</Title>
             <Text>FlexiCleans filterkassett för dagvattenrening renar tungmetaller, näringsämnen, oljorna PAH och Pfas. Kassetten rymmer 160 l/min filtrerat vatten och är försedd med en bypassfunktion vid höga vattenmängder. Filterpåsen som består av en blandning av furubark och träflis byts normalt en gång per år. </Text>
