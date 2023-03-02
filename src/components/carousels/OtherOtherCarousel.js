@@ -40,7 +40,7 @@ function Card({ image, title, category }) {
       shadow="md"
       p="xl"
       radius="md"
-      sx={{ backgroundImage: `url(${image})` }}
+      sx={{ backgroundImage: `url(${image})`}}
       className={classes.card}
     >
       <div>
@@ -61,19 +61,25 @@ function Card({ image, title, category }) {
 const data = [
   {
     image:
-      'https://h24-original.s3.amazonaws.com/252829/29671418-qZqDq.jpg',
+      'https://h24-original.s3.amazonaws.com/252829/30249150-teMDG.jpg',
     // title: 'FlexiCleans filterkassett för dagvattenrening',
-    category: 'Filterväggar',
+    category: 'målartvätt',
   },
   {
     image:
-      'https://h24-original.s3.amazonaws.com/252829/29670696-DJXfM.jpg',
+      'https://h24-original.s3.amazonaws.com/252829/30249151-LghYS.jpg',
     // title: 'Hawaii beaches review: better than you think',
-    category: 'Filterbrunnar',
+    category: 'brunnlock',
+  },
+  {
+    image:
+      'https://h24-original.s3.amazonaws.com/252829/30249156-WiNiq.png',
+    // title: 'Hawaii beaches review: better than you think',
+    category: 'filterkorg',
   }
 ];
 
-const OtherProductsCarousel = () => {
+const OtherOtherCarousel = () => {
   // const theme = useMantineTheme();
   // const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const slides = data.map((item) => (
@@ -97,4 +103,4 @@ const OtherProductsCarousel = () => {
   );
 }
 
-export default OtherProductsCarousel
+export default OtherOtherCarousel

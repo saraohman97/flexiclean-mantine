@@ -3,6 +3,7 @@ import React from 'react'
 import OtherProductsCarousel from '../components/carousels/OtherProductsCarousel'
 import Navbar from '../components/Navbar'
 import FilterbrunnarTable from '../components/tables/FilterbrunnarTable'
+import OtherOtherCarousel from '../components/carousels/OtherOtherCarousel'
 
 const useStyles = createStyles((theme) => ({
   mobile: {
@@ -46,39 +47,19 @@ const OtherProductsView = () => {
         <OtherProductsCarousel />
       </Container>
 
-      <Container>
-        <Title mt='lg' size='h3'>Filter storlekar</Title>
+      <Container mt='lg'>
+        <Title size='h3'>Filter storlekar</Title>
         <FilterbrunnarTable />
+      </Container>
 
-        <Flex mt='lg' justify='space-between'>
-          <Text><Title>FlexiCleans Målartvätt</Title>En enkel icke mekanisk filtrering som kopplas till befintligt avlopp under diskbänken. Filtret renar tungmetaller, näringsämnen, oljor PAH och Pfas.</Text>
-          <Image
-            maw='300px'
-            src='https://h24-original.s3.amazonaws.com/252829/30249150-teMDG.jpg'
-            alt='flexiclean målartvätt'
-          />
-        </Flex>
+      <Container className={classes.mobile} mt='xl'>
+        <Group>
+          <Text><Title size='h3'>FlexiCleans Målartvätt</Title>En enkel icke mekanisk filtrering som kopplas till befintligt avlopp under diskbänken. Filtret renar tungmetaller, näringsämnen, oljor PAH och Pfas.</Text>
+          <Text><Title size='h3'>FlexiClean Brunnslock</Title>Förhindra effektivt större fragment att hamna i dagvattenbrunnen.</Text>
+          <Text><Title size='h3'>FlexiClean Filterkorg</Title>Förhindrar effektivt större fragment att hamna i dagvattnet. Korgen placeras i dagvattenbrunnen. </Text>
+        </Group>
 
-        <Flex justify='space-between'>
-          <Text><Title>FlexiClean Brunnslock</Title>Förhindra effektivt större fragment att hamna i dagvattenbrunnen.</Text>
-          <Image
-            maw='300px'
-            src='https://h24-original.s3.amazonaws.com/252829/30249151-LghYS.jpg'
-            alt='flexiclean brunnlock'
-          />
-        </Flex>
-
-        <Flex justify='space-between'>
-          <Text><Title>FlexiClean Filterkorg</Title>Förhindrar effektivt större fragment att hamna i dagvattnet. Korgen placeras i dagvattenbrunnen. </Text>
-          <Image
-            maw='200px'
-            ml='100px'
-            src='https://h24-original.s3.amazonaws.com/252829/30249156-WiNiq.png'
-            alt='flexiclean filterkorg'
-          />
-        </Flex>
-
-
+          <OtherOtherCarousel />
       </Container>
     </>
   )

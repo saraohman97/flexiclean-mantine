@@ -1,198 +1,204 @@
 {
-    "contactInfo": [
+  "contactInfo": [
+    {
+      "id": 2,
+      "icon": "fa-solid fa-phone",
+      "title": "Telefon nummer",
+      "description": "08-120 17 530"
+    },
+    {
+      "id": 3,
+      "icon": "fa-regular fa-address-book",
+      "title": "Address",
+      "description": "Brandthovdagatan 16 721 35 Västerås"
+    },
+    {
+      "id": 1,
+      "icon": "fa-solid fa-location-dot",
+      "title": "GPS",
+      "description": "WGS84: N 59° 36.9505', E 16° 36.5669' Decimal: 59.6158, 16.6094"
+    },
+    {
+      "id": 4,
+      "icon": "fa-solid fa-calendar-days",
+      "title": "Öppettider",
+      "description": "Vardagar 7.00 - 16.00"
+    }
+  ],
+  "contactUsForm": [
+    {
+      "values": "da",
+      "id": 1
+    }
+  ],
+  "productSpecific": [
+    {
+      "dagvatten": [
         {
-            "id": 1,
-            "icon": "fa-solid fa-at",
-            "title": "Email address",
-            "description": "hello@mantine.dev"
+          "id": "100100 FC408SA",
+          "well": "350-450",
+          "length": "600",
+          "type": ""
         },
         {
-            "id": 2,
-            "icon": "fa-solid fa-phone",
-            "title": "Telefon nummer",
-            "description": "+49 (800) 335 35 35"
+          "id": "100101 FC410SA",
+          "well": "350-450",
+          "length": "800",
+          "type": ""
         },
         {
-            "id": 3,
-            "icon": "fa-regular fa-address-book",
-            "title": "Address",
-            "description": "844 Morris Park avenue"
+          "id": "100102 FC508SA",
+          "well": "500",
+          "length": "600",
+          "type": ""
         },
         {
-            "id": 4,
-            "icon": "fa-solid fa-calendar-days",
-            "title": "Öppettider",
-            "description": "8 a.m. - 11 p.m."
+          "id": "100103 FC510SA",
+          "well": "500",
+          "length": "800",
+          "type": ""
+        },
+        {
+          "id": "100104 FC608SA",
+          "well": "600",
+          "length": "600",
+          "type": ""
+        },
+        {
+          "id": "100105 FC610SA",
+          "well": "600",
+          "length": "800",
+          "type": ""
+        },
+        {
+          "id": "100106 FC1008SA",
+          "well": "1000",
+          "length": "600",
+          "type": ""
+        },
+        {
+          "id": "100107 FC1010SA",
+          "well": "1000",
+          "length": "800",
+          "type": ""
+        },
+        {
+          "id": "100113 Filterdyna",
+          "well": "600",
+          "length": "600",
+          "type": ""
+        },
+        {
+          "id": "100114 Filterdyna",
+          "well": "800",
+          "length": "800",
+          "type": ""
         }
-    ],
-    "productSpecific": [
+      ]
+    },
+    {
+      "granulat": [
         {
-            "dagvatten": [
-                {
-                    "id": "100100 FC408SA",
-                    "well": "350-450",
-                    "length": "600",
-                    "type": ""
-                },
-                {
-                    "id": "100101 FC410SA",
-                    "well": "350-450",
-                    "length": "800",
-                    "type": ""
-                },
-                {
-                    "id": "100102 FC508SA",
-                    "well": "500",
-                    "length": "600",
-                    "type": ""
-                },
-                {
-                    "id": "100103 FC510SA",
-                    "well": "500",
-                    "length": "800",
-                    "type": ""
-                },
-                {
-                    "id": "100104 FC608SA",
-                    "well": "600",
-                    "length": "600",
-                    "type": ""
-                },
-                {
-                    "id": "100105 FC610SA",
-                    "well": "600",
-                    "length": "800",
-                    "type": ""
-                },
-                {
-                    "id": "100106 FC1008SA",
-                    "well": "1000",
-                    "length": "600",
-                    "type": ""
-                },
-                {
-                    "id": "100107 FC1010SA",
-                    "well": "1000",
-                    "length": "800",
-                    "type": ""
-                },
-                {
-                    "id": "100113 Filterdyna",
-                    "well": "600",
-                    "length": "600",
-                    "type": ""
-                },
-                {
-                    "id": "100114 Filterdyna",
-                    "well": "800",
-                    "length": "800",
-                    "type": ""
-                }
-            ]
+          "id": "200100 FC 408 Granulat",
+          "well": "350-450",
+          "type": ""
         },
         {
-            "granulat": [
-                {
-                    "id": "200100 FC 408 Granulat",
-                    "well": "350-450",
-                    "type": ""
-                },
-                {
-                    "id": "200102 FC 508 Granulat",
-                    "well": "500",
-                    "type": ""
-                },
-                {
-                    "id": "200103 FC 608 Granulat",
-                    "well": "600",
-                    "type": ""
-                },
-                {
-                    "id": "200104 FC 1008 Granulat",
-                    "well": "1000",
-                    "type": ""
-                },
-                {
-                    "id": "100113 Filterdyna 600mm",
-                    "well": "600",
-                    "type": ""
-                }
-            ]
+          "id": "200102 FC 508 Granulat",
+          "well": "500",
+          "type": ""
         },
         {
-            "filterbrunnar": [
-                {
-                    "id": "79 122. Filterbrunn Dagvatten DN600",
-                    "amount": "2",
-                    "capacity": "19"
-                },
-                {
-                    "id": "79 123. Filterbrunn Dagvatten DN1000",
-                    "amount": "3",
-                    "capacity": "29"
-                },
-                {
-                    "id": "79 124. Filterbrunn Dagvatten DN1200",
-                    "amount": "4",
-                    "capacity": "38"
-                }
-            ]
+          "id": "200103 FC 608 Granulat",
+          "well": "600",
+          "type": ""
+        },
+        {
+          "id": "200104 FC 1008 Granulat",
+          "well": "1000",
+          "type": ""
+        },
+        {
+          "id": "100113 Filterdyna 600mm",
+          "well": "600",
+          "type": ""
         }
-    ],
-    "documentation": [
+      ]
+    },
+    {
+      "filterbrunnar": [
         {
-            "image": "https://dst15js82dk7j.cloudfront.net/252829/97260241-tJLrg.jpg",
-            "title": "Installation av filter, provtagning och analys av dagvatten. IVL, november 2021",
-            "description": "IVL Svenska Miljöinstitutet har i uppdraget för Järfälla kommun, i samarbete med kommunen och företaget Flexiclean, installerat och utvärderat brunnsfilter med tallbark och flis för att minska spridningen av mikroplast och andra föroreningar i dagvatten från konstgräsplaner och trafikytor.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1316759/h/5cf3ec391113acf2430b2df9067210c1/C638+Installation+av+filter%2C+provtagning+och+analys+av+dagvatten"
+          "id": "79 122. Filterbrunn Dagvatten DN600",
+          "amount": "2",
+          "capacity": "19"
         },
         {
-            "image": "https://dst15js82dk7j.cloudfront.net/252829/97260234-B1XER.png",
-            "title": "Components for area-efficient stormwater treatment systems, Luleå Tekniska universitet, 2021",
-            "description": "Components for area-efficient stormwater treatment systems Ivan Milovanović Urban Water Engineering, Luleå Tekniska universitet 2021. LTU gjorde under 2020-2021 tester på filtermaterial.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1299629/h/f884472b5a419dc81ddf19259af63d50/FULLTEXT03_LTU%2BBark"
+          "id": "79 123. Filterbrunn Dagvatten DN1000",
+          "amount": "3",
+          "capacity": "29"
         },
         {
-            "image": "https://www.cesaer.org/img-cache/25a04vwvn7-chalmers_-v.43ad610a.png",
-            "title": "Utvärdering av filtermaterial för att avlägsna lösta organiska föroreningar i dagvatten, Chalmers tekniska högskola, 2019",
-            "description": "Dagvatten är i många fall förorenat av organiska miljögifter såsom polycykliska aromatiska kolväten (PAH), ftalater och alkylfenoler, som härstammar från trafik och byggnadsmaterial. Filter med adsorberande material har potential att rena bort lösta, kolloidala och partikelbundna organiska föroreningar från dagvatten. Syftet med detta forskningsprojekt är att undersöka hur effektivt olika filtermaterial kan avlägsna lösta organiska föroreningar från dagvatten. 11 olika material undersöktes i bägarförsök med syntetiskt dagvatten: PAH, ftalater och alkylfenoler i koncentrationer från 10 till 300 µg/l samt löst organiskt material blandades med materialen under 10 min till 24 h varefter kvarvarande halter föroreningar i vattenfasen analyserades. Materialen chitosan, cellulosa, zeolit, perlit och vermikulit uppvisade begränsad adsorption av de undersökta föroreningarna. Tallbark och plastfibrer kunde dock avlägsna minst 70 % av de flesta föroreningar. Obehandlad och behandlad tallbark från olika tillverkare uppvisade liknande adsorptionsförmåga; det är därför inte avgörande vilken tallbarksprodukt som används. En stor andel av föroreningarna adsorberades inom 10 min kontakt med bark. Fortsatta studier bör fokusera på den praktiska tillämpningen av materialen och optimering av filteranläggningar, så att materialens adsorptionsförmåga utnyttjas till dess fulla potential.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1227509/h/8e4bfe411ae1f0094e4f171ab6c4f8dd/vatten_2_2019_205%2B216_Chalmers"
-        },
-        {
-            "image": "https://www.svenskfotboll.se/48fcb2/globalassets/svff/bilderblock/logotyper/distriktsemblem/svff.svg",
-            "title": "Rekommendationer för anläggning av konstgräsplaner, Svenska Fotbollsförbundet, april 2017",
-            "description": "Mikroplast i haven är ett allt mer uppmärksammat miljöproblem. Det är bevisat att mikroplast har spridit sig till världens alla hav. Djur i haven äter mikroplasten i tron att det är mat vilket kan orsaka skada i matsmältningsorganen. Genom att djuren äter plasten ökas andelen mikroplaster i den marina näringskedjan och i värsta fall hamnar de i vår mat. Mikroplaster kan i sig själv innehålla höga halter av giftiga ämnen och binder lätt till sig andra giftiga ämnen.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977084/h/9022f31754a17c3d2c878f016afa453d/17+Rekommendationer+KG%2Banl%C3%A4ggning+%2B+Reviderad+version+2017%2B04%2B10+%28webb%29"
-        },
-        {
-            "image": "https://dst15js82dk7j.cloudfront.net/252829/71095419-sBi5t.png",
-            "title": "Dagvatten utvärdering filter, Provtagning Dagvatten Göteborg, december 2016",
-            "description": "Kretslopp och Vatten, Göteborgs stad (KV), har genomfört ett pilotprojekt med tester av filter i dagvattenbrunnar för rening av dagvattnets innehåll. Projektet har genomförts på dagvattensystemet i området vid Sahlgrenska sjukhuset i Göteborg, där dagvattnet rinner ut i Vitsippsbäcken. Uppföljningen av filtrens funktion har gjorts genom mätning och provtagning på dagvattnet i området för avrinningsområdet till Vitsippsbäcken för situationen med filter installerade i brunnarna och efter att filtren har tagits bort.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977087/h/d0a262b908fc8d8bfec05965625f7484/12803415+KV+Dagvatten+provtagning+Sahlgrenska+v3+17_01_04"
-        },
-        {
-            "image": "https://h24-original.s3.amazonaws.com/252829/24431606-BnUYw.png",
-            "title": "Utbyte av filterkassetter, WSP, 2015-2016.",
-            "description": "Ett återvinningsföretag i Västerås ville byta ut sina filterkasetter av typen ”hänger i gallret” mot FlexiClean. WSP utförde tester och resultaten efter bytet visar att reningseffekten fördubblades.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977205/h/cde5c898e3fb8217ba61f91430955a2d/WSP+prover+V%C3%A4ster%C3%A5s+2016_j%C3%A4mf%C3%B6relse"
-        },
-        {
-            "image": "https://h24-original.s3.amazonaws.com/252829/24431623-FE0kl.png",
-            "title": "Kinetic sorption modelling of Cu, Ni, Zn, Pb and Cr ions to pine bark and blast furnace slag by using batch experiments, Mälardagens högskola, 2008",
-            "description": "Storm water and landfill leachate can both contain significant amounts of toxic metals such as Zn, Cu, Pb, Cr and Ni. Pine bark and blast furnace slag are both residual waste products that have shown a large potential for metal removal from contaminated water. There are however many variables that must be optimized in order to achieve efficient metal retention. One of these variables is the time of which the solution is in contact with each unit of filter material. Metal sorption was studied in two laboratory experiments to improve the knowledge of the effects of contact time. The results showed that pine bark was generally more efficient than blast furnace slag when the metal concentrations were relatively small, whereas blast furnace slag sorbed most metals to a larger extent at increased metal loads. In addition, sorption to blast furnace slag was found to be faster than metal binding to pine bark. A pseudo-second-order kinetic model was able to describe the data well within 1000 s of reaction time.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977206/h/d3a971e1c05149518fa3300a8663b0ac/Nehrenheim_Gustafsson_2008"
-        },
-        {
-            "image": "https://dst15js82dk7j.cloudfront.net/252829/71109976-Te4hm.png",
-            "title": "Provning av filter till dagvattenbrunn",
-            "description": "SP har på uppdrag av Aros Rör & Svets provat Flexi-Clean 400 filterkassett för dagvattenbrunnar med avseende på fl ödeskapacitet. Dagvattenbrulnen har kopplats samman med SPs flödesrigg for vattenfiirsörjning och flödesmäbring. Samtliga prov har utforts med rent vatten och vid rumstemperaturen ca. 20c",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977288/h/9d70a85192da6c23948c70d0fea90957/SP_fl%C3%B6destest"
-        },
-        {
-            "image": "https://dst15js82dk7j.cloudfront.net/252829/71110015-0BbhN.png",
-            "title": "PM - Kontrollprovtagning dagvattenrening, Munktellstaden Eskilstuna, Structor Miljöteknik, 2009",
-            "description": "I samband med filterbyte i dagvattenbrunnar inom Munktellstaden har kontrollprovtagning av dagvattenfilter och dagvatten utförts. Uppdragets syfte är att kontrollera effekten av installerade filter i dagvattenbrunnarna samt få ett underlag för bedömning av intervall för filterbyte. Även föroreningsinnehållet i filtren skall kontrolleras för bedömning av lämpligt omhändertagande för avfallet.",
-            "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977292/h/7360ae7969e44107d7c30eec60c31b70/PM+%2B+Kontrollprov+2+structor"
+          "id": "79 124. Filterbrunn Dagvatten DN1200",
+          "amount": "4",
+          "capacity": "38"
         }
-    ]
+      ]
+    }
+  ],
+  "documentation": [
+    {
+      "image": "https://dst15js82dk7j.cloudfront.net/252829/97260241-tJLrg.jpg",
+      "title": "Installation av filter, provtagning och analys av dagvatten. IVL, november 2021",
+      "description": "IVL Svenska Miljöinstitutet har i uppdraget för Järfälla kommun, i samarbete med kommunen och företaget Flexiclean, installerat och utvärderat brunnsfilter med tallbark och flis för att minska spridningen av mikroplast och andra föroreningar i dagvatten från konstgräsplaner och trafikytor.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1316759/h/5cf3ec391113acf2430b2df9067210c1/C638+Installation+av+filter%2C+provtagning+och+analys+av+dagvatten"
+    },
+    {
+      "image": "https://dst15js82dk7j.cloudfront.net/252829/97260234-B1XER.png",
+      "title": "Components for area-efficient stormwater treatment systems, Luleå Tekniska universitet, 2021",
+      "description": "Components for area-efficient stormwater treatment systems Ivan Milovanović Urban Water Engineering, Luleå Tekniska universitet 2021. LTU gjorde under 2020-2021 tester på filtermaterial.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1299629/h/f884472b5a419dc81ddf19259af63d50/FULLTEXT03_LTU%2BBark"
+    },
+    {
+      "image": "https://www.cesaer.org/img-cache/25a04vwvn7-chalmers_-v.43ad610a.png",
+      "title": "Utvärdering av filtermaterial för att avlägsna lösta organiska föroreningar i dagvatten, Chalmers tekniska högskola, 2019",
+      "description": "Dagvatten är i många fall förorenat av organiska miljögifter såsom polycykliska aromatiska kolväten (PAH), ftalater och alkylfenoler, som härstammar från trafik och byggnadsmaterial. Filter med adsorberande material har potential att rena bort lösta, kolloidala och partikelbundna organiska föroreningar från dagvatten. Syftet med detta forskningsprojekt är att undersöka hur effektivt olika filtermaterial kan avlägsna lösta organiska föroreningar från dagvatten. 11 olika material undersöktes i bägarförsök med syntetiskt dagvatten: PAH, ftalater och alkylfenoler i koncentrationer från 10 till 300 µg/l samt löst organiskt material blandades med materialen under 10 min till 24 h varefter kvarvarande halter föroreningar i vattenfasen analyserades. Materialen chitosan, cellulosa, zeolit, perlit och vermikulit uppvisade begränsad adsorption av de undersökta föroreningarna. Tallbark och plastfibrer kunde dock avlägsna minst 70 % av de flesta föroreningar. Obehandlad och behandlad tallbark från olika tillverkare uppvisade liknande adsorptionsförmåga; det är därför inte avgörande vilken tallbarksprodukt som används. En stor andel av föroreningarna adsorberades inom 10 min kontakt med bark. Fortsatta studier bör fokusera på den praktiska tillämpningen av materialen och optimering av filteranläggningar, så att materialens adsorptionsförmåga utnyttjas till dess fulla potential.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/1227509/h/8e4bfe411ae1f0094e4f171ab6c4f8dd/vatten_2_2019_205%2B216_Chalmers"
+    },
+    {
+      "image": "https://www.svenskfotboll.se/48fcb2/globalassets/svff/bilderblock/logotyper/distriktsemblem/svff.svg",
+      "title": "Rekommendationer för anläggning av konstgräsplaner, Svenska Fotbollsförbundet, april 2017",
+      "description": "Mikroplast i haven är ett allt mer uppmärksammat miljöproblem. Det är bevisat att mikroplast har spridit sig till världens alla hav. Djur i haven äter mikroplasten i tron att det är mat vilket kan orsaka skada i matsmältningsorganen. Genom att djuren äter plasten ökas andelen mikroplaster i den marina näringskedjan och i värsta fall hamnar de i vår mat. Mikroplaster kan i sig själv innehålla höga halter av giftiga ämnen och binder lätt till sig andra giftiga ämnen.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977084/h/9022f31754a17c3d2c878f016afa453d/17+Rekommendationer+KG%2Banl%C3%A4ggning+%2B+Reviderad+version+2017%2B04%2B10+%28webb%29"
+    },
+    {
+      "image": "https://dst15js82dk7j.cloudfront.net/252829/71095419-sBi5t.png",
+      "title": "Dagvatten utvärdering filter, Provtagning Dagvatten Göteborg, december 2016",
+      "description": "Kretslopp och Vatten, Göteborgs stad (KV), har genomfört ett pilotprojekt med tester av filter i dagvattenbrunnar för rening av dagvattnets innehåll. Projektet har genomförts på dagvattensystemet i området vid Sahlgrenska sjukhuset i Göteborg, där dagvattnet rinner ut i Vitsippsbäcken. Uppföljningen av filtrens funktion har gjorts genom mätning och provtagning på dagvattnet i området för avrinningsområdet till Vitsippsbäcken för situationen med filter installerade i brunnarna och efter att filtren har tagits bort.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977087/h/d0a262b908fc8d8bfec05965625f7484/12803415+KV+Dagvatten+provtagning+Sahlgrenska+v3+17_01_04"
+    },
+    {
+      "image": "https://h24-original.s3.amazonaws.com/252829/24431606-BnUYw.png",
+      "title": "Utbyte av filterkassetter, WSP, 2015-2016.",
+      "description": "Ett återvinningsföretag i Västerås ville byta ut sina filterkasetter av typen ”hänger i gallret” mot FlexiClean. WSP utförde tester och resultaten efter bytet visar att reningseffekten fördubblades.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977205/h/cde5c898e3fb8217ba61f91430955a2d/WSP+prover+V%C3%A4ster%C3%A5s+2016_j%C3%A4mf%C3%B6relse"
+    },
+    {
+      "image": "https://h24-original.s3.amazonaws.com/252829/24431623-FE0kl.png",
+      "title": "Kinetic sorption modelling of Cu, Ni, Zn, Pb and Cr ions to pine bark and blast furnace slag by using batch experiments, Mälardagens högskola, 2008",
+      "description": "Storm water and landfill leachate can both contain significant amounts of toxic metals such as Zn, Cu, Pb, Cr and Ni. Pine bark and blast furnace slag are both residual waste products that have shown a large potential for metal removal from contaminated water. There are however many variables that must be optimized in order to achieve efficient metal retention. One of these variables is the time of which the solution is in contact with each unit of filter material. Metal sorption was studied in two laboratory experiments to improve the knowledge of the effects of contact time. The results showed that pine bark was generally more efficient than blast furnace slag when the metal concentrations were relatively small, whereas blast furnace slag sorbed most metals to a larger extent at increased metal loads. In addition, sorption to blast furnace slag was found to be faster than metal binding to pine bark. A pseudo-second-order kinetic model was able to describe the data well within 1000 s of reaction time.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977206/h/d3a971e1c05149518fa3300a8663b0ac/Nehrenheim_Gustafsson_2008"
+    },
+    {
+      "image": "https://dst15js82dk7j.cloudfront.net/252829/71109976-Te4hm.png",
+      "title": "Provning av filter till dagvattenbrunn",
+      "description": "SP har på uppdrag av Aros Rör & Svets provat Flexi-Clean 400 filterkassett för dagvattenbrunnar med avseende på fl ödeskapacitet. Dagvattenbrulnen har kopplats samman med SPs flödesrigg for vattenfiirsörjning och flödesmäbring. Samtliga prov har utforts med rent vatten och vid rumstemperaturen ca. 20c",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977288/h/9d70a85192da6c23948c70d0fea90957/SP_fl%C3%B6destest"
+    },
+    {
+      "image": "https://dst15js82dk7j.cloudfront.net/252829/71110015-0BbhN.png",
+      "title": "PM - Kontrollprovtagning dagvattenrening, Munktellstaden Eskilstuna, Structor Miljöteknik, 2009",
+      "description": "I samband med filterbyte i dagvattenbrunnar inom Munktellstaden har kontrollprovtagning av dagvattenfilter och dagvatten utförts. Uppdragets syfte är att kontrollera effekten av installerade filter i dagvattenbrunnarna samt få ett underlag för bedömning av intervall för filterbyte. Även föroreningsinnehållet i filtren skall kontrolleras för bedömning av lämpligt omhändertagande för avfallet.",
+      "link": "https://www.flexiclean.eu/Homepage/Download-File/f/977292/h/7360ae7969e44107d7c30eec60c31b70/PM+%2B+Kontrollprov+2+structor"
+    }
+  ]
 }

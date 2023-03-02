@@ -119,7 +119,7 @@ const Navbar = () => {
                                     className={classes.link}
                                     component={Link}
                                     to='/produkter/dagvatten'
-                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-shop"></i></ActionIcon>}>
+                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-droplet"></i></ActionIcon>}>
                                     Dagvattenrening
                                 </List.Item>
 
@@ -127,7 +127,7 @@ const Navbar = () => {
                                     className={classes.link}
                                     component={Link}
                                     to='/produkter/granulat'
-                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-location-dot"></i></ActionIcon>}>
+                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-basketball"></i></ActionIcon>}>
                                     Granulat
                                 </List.Item>
 
@@ -135,7 +135,7 @@ const Navbar = () => {
                                     className={classes.link}
                                     component={Link}
                                     to='/produkter/annat'
-                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-location-dot"></i></ActionIcon>}>
+                                    icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-globe"></i></ActionIcon>}>
                                     Stora och små projekt
                                 </List.Item>
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
 import {
-  Paper,
   Text,
   TextInput,
   Textarea,
@@ -12,7 +11,9 @@ import {
   createStyles,
   Flex,
   ActionIcon,
+  Container,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 
 const useStyles = createStyles((theme) => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
@@ -24,9 +25,6 @@ const useStyles = createStyles((theme) => {
       display: 'flex',
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
-      padding: 4,
-      border: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[2]
-        }`,
 
       [BREAKPOINT]: {
         flexDirection: 'column',
@@ -76,8 +74,8 @@ const useStyles = createStyles((theme) => {
       boxSizing: 'border-box',
       position: 'relative',
       borderRadius: theme.radius.lg - 2,
-      // backgroundImage: `url(${'https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'})`,
-      backgroundColor: theme.colors.blue[9],
+      border: '1px solid lightgray',
+      backgroundColor: theme.colors.white,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       padding: theme.spacing.xl,
@@ -110,6 +108,33 @@ const useStyles = createStyles((theme) => {
 const ContactUsView = () => {
   const [contactInfo, setContactInfo] = useState("");
   const { classes } = useStyles();
+  // const [values, setValues] = useState({
+  //   fullName: '',
+  //   email: '',
+  //   subject: '',
+  //   message: ''
+  // })
+
+  // const [fullName, fullName] = useState('')
+  // const [email, email] = useState('')
+  // const [subject, subject] = useState('')
+  // const [message, message] = useState('')
+
+  const form = useForm({
+    initialValues: {
+      fullName: '',
+      email: '',
+      subject: '',
+      message: '',
+      termsOfService: false,
+    },
+
+    validate: {
+      // name: hasLength({ min: 2, max: 10 }, 'Name must be 2-10 characters long'),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+    },
+  });
+
 
   useEffect(() => {
     axios.get("http://localhost:9000/contactInfo")
@@ -120,58 +145,76 @@ const ContactUsView = () => {
 
   if (!contactInfo) return null;
 
+
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+
+  //   const addMessage = { fullName, email, subject, message }
+
+  //   fetch('http://localhost:9000/contactUsForm', {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(addMessage)
+  //   }).then(() => {
+  //     console.log(addMessage)
+  //   })
+  // }
+
+  // const onChange = e => {
+  //   setValues({ ...values, [e.target.name]: e.target.value })
+  // }
+
   return (
     <>
       <Navbar />
 
-      <Paper shadow="md" radius="lg">
-        <div className={classes.wrapper}>
-          <div className={classes.contacts}>
-            <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
-              Kontakt information
-            </Text>
+      <Container className={classes.wrapper}>
+        <div className={classes.contacts}>
+          <Text size="lg" weight={700} className={classes.title}>
+            Kontakt information
+          </Text>
 
-            {contactInfo && contactInfo.map((info) => (
-              <Flex gap='20px' key={info.id} align='center'>
-                <ActionIcon sx={{ color: '#fff' }} className={info.icon} />
-                <div className={classes.fields}>
-                  <Text size="xs">{info.title}</Text>
-                  <Text size="lg">{info.description}</Text>
-                </div>
-              </Flex>
-            ))}
-
-          </div>
-
-          <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
-            <Text size="lg" weight={700} className={classes.title}>
-              Hör av dig
-            </Text>
-
-            <div className={classes.fields}>
-              <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                <TextInput label="Ditt namn" placeholder="Ditt namn" />
-                <TextInput label="Din email" placeholder="hello@mantine.dev" required />
-              </SimpleGrid>
-
-              <TextInput mt="md" label="Ämne" placeholder="Ämne" required />
-
-              <Textarea
-                mt="md"
-                label="Ditt meddelande"
-                placeholder="Var snäll inkludera relevant information"
-                minRows={3}
-              />
-
-              <Group position="right" mt="md">
-                <Button type="submit" className={classes.control}>
-                  Skicka meddelande
-                </Button>
-              </Group>
-            </div>
-          </form>
+          {contactInfo && contactInfo.map((info) => (
+            <Flex gap='20px' key={info.id} align='center'>
+              <ActionIcon className={info.icon} color='black' />
+              <div className={classes.fields}>
+                <Text color='black' size="xs">{info.title}</Text>
+                <Text color='black' size="lg">{info.description}</Text>
+              </div>
+            </Flex>
+          ))}
         </div>
-      </Paper>
+
+        {/* <form className={classes.form} onSubmit={(event) => event.preventDefault()}> */}
+        <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>
+          <Text size="lg" weight={700} className={classes.title}>
+            Hör av dig
+          </Text>
+
+          <div className={classes.fields}>
+            <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+              <TextInput label="Ditt namn" placeholder="Ditt namn" {...form.getInputProps('fullName')} />
+              <TextInput label="Din email" placeholder="hello@mantine.dev" required {...form.getInputProps('email')} />
+            </SimpleGrid>
+
+            <TextInput mt="md" label="Ämne" placeholder="Ämne" required {...form.getInputProps('subject')} />
+
+            <Textarea
+              mt="md"
+              label="Ditt meddelande"
+              placeholder="Var snäll inkludera relevant information"
+              minRows={3}
+              {...form.getInputProps('message')}
+            />
+
+            <Group position="right" mt="md">
+              <Button type="submit" className={classes.control}>
+                Skicka meddelande
+              </Button>
+            </Group>
+          </div>
+        </form>
+      </Container>
     </>
   );
 }
