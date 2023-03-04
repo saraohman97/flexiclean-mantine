@@ -120,24 +120,29 @@ const ContactUsView = () => {
   // const [subject, subject] = useState('')
   // const [message, message] = useState('')
 
-  const form = useForm({
-    initialValues: {
-      fullName: '',
-      email: '',
-      subject: '',
-      message: '',
-      termsOfService: false,
-    },
+  // const form = useForm({
+  //   initialValues: {
+  //     fullName: '',
+  //     email: '',
+  //     subject: '',
+  //     message: '',
+  //     termsOfService: false,
+  //   },
 
-    validate: {
-      // name: hasLength({ min: 2, max: 10 }, 'Name must be 2-10 characters long'),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-    },
-  });
+  //   validate: {
+  //     email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+  //   },
+  // });
+
+  const [fullName, setFullName] = useState('')
+  const [mail, setMail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
 
   useEffect(() => {
-    axios.get("http://localhost:9000/contactInfo")
+    axios
+      .get("http://localhost:9000/contactInfo")
       .then((res) => {
         setContactInfo(res.data);
       })
@@ -146,19 +151,24 @@ const ContactUsView = () => {
   if (!contactInfo) return null;
 
 
-  // const handleSubmit = e => {
-  //   e.preventDefault()
+  const handleSubmit = e => {
+    e.preventDefault()
 
-  //   const addMessage = { fullName, email, subject, message }
+    axios
+      .post("http://localhost:9000/contactUsForm", { fullName, mail, subject, message })
+      .then(response => {
+        console.log(response)
+      })
 
-  //   fetch('http://localhost:9000/contactUsForm', {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(addMessage)
-  //   }).then(() => {
-  //     console.log(addMessage)
-  //   })
-  // }
+    // const addMessage = { fullName, email, subject, message }
+    // fetch('http://localhost:9000/contactUsForm', {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(addMessage)
+    // }).then(() => {
+    //   console.log(addMessage)
+    // })
+  }
 
   // const onChange = e => {
   //   setValues({ ...values, [e.target.name]: e.target.value })
@@ -186,25 +196,43 @@ const ContactUsView = () => {
         </div>
 
         {/* <form className={classes.form} onSubmit={(event) => event.preventDefault()}> */}
-        <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <Text size="lg" weight={700} className={classes.title}>
             Hör av dig
           </Text>
 
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput label="Ditt namn" placeholder="Ditt namn" {...form.getInputProps('fullName')} />
-              <TextInput label="Din email" placeholder="hello@mantine.dev" required {...form.getInputProps('email')} />
+              <TextInput
+                label="Ditt namn"
+                placeholder="Ditt namn"
+                value={fullName}
+                onChange={e => setFullName(e.target.value)}
+              />
+              <TextInput
+                label="Din email"
+                placeholder="hello@mantine.dev"
+                required value={mail}
+                onChange={e => setMail(e.target.value)}
+              />
             </SimpleGrid>
 
-            <TextInput mt="md" label="Ämne" placeholder="Ämne" required {...form.getInputProps('subject')} />
+            <TextInput
+              mt="md"
+              label="Ämne"
+              placeholder="Ämne"
+              required
+              value={subject}
+              onChange={e => setSubject(e.target.value)}
+            />
 
             <Textarea
               mt="md"
               label="Ditt meddelande"
               placeholder="Var snäll inkludera relevant information"
               minRows={3}
-              {...form.getInputProps('message')}
+              value={message}
+              onChange={e => setMessage(e.target.value)}
             />
 
             <Group position="right" mt="md">

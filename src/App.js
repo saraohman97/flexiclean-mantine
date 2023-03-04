@@ -6,10 +6,10 @@ import Footer from './components/Footer'
 import ContactUsView from './views/ContactUsView'
 import DocumentationView from './views/DocumentationView'
 import InstructionsView from './views/InstructionsView'
-// import ProductsView from './views/ProductsView'
 import GranulatView from './views/GranulatView'
 import DagvattenView from './views/DagvattenView';
 import OtherProductsView from './views/OtherProductsView'
+import OrderView from './views/OrderView';
 
 function App() {
   return (
@@ -39,6 +39,7 @@ function App() {
           <Route path='/produkter/dagvatten' element={<DagvattenView />} />
           <Route path='/produkter/granulat' element={<GranulatView />} />
           <Route path='/produkter/annat' element={<OtherProductsView />} />
+          <Route path='/order' element={<OrderView />} />
         </Routes>
 
         <Footer />

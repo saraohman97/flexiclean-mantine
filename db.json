@@ -1,4 +1,35 @@
 {
+  "contactUsForm": [],
+  "orderForm": [
+    {
+      "bookingNumber": "xx",
+      "password": "xx",
+      "amount": "",
+      "bookerName": "xx",
+      "id": 1
+    },
+    {
+      "bookingNumber": "xx",
+      "password": "xx",
+      "amount": "1",
+      "bookerName": "xx",
+      "id": 2
+    },
+    {
+      "bookingNumber": "s",
+      "password": "s",
+      "amount": "",
+      "bookerName": "s",
+      "id": 3
+    },
+    {
+      "bookingNumber": "d",
+      "password": "d",
+      "amount": null,
+      "bookerName": "d",
+      "id": 4
+    }
+  ],
   "contactInfo": [
     {
       "id": 2,
@@ -23,12 +54,6 @@
       "icon": "fa-solid fa-calendar-days",
       "title": "Öppettider",
       "description": "Vardagar 7.00 - 16.00"
-    }
-  ],
-  "contactUsForm": [
-    {
-      "values": "da",
-      "id": 1
     }
   ],
   "productSpecific": [

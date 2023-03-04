@@ -238,7 +238,7 @@ const Navbar = () => {
                 </Group>
 
                 {/* button */}
-                <Button radius="xl" sx={{ height: 30 }} className={classes.button} >
+                <Button radius="xl" sx={{ height: 30 }} className={classes.button} component={Link} to='/order' >
                     Beställ Filterpåsar
                 </Button>
             </Container>
