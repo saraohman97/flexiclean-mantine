@@ -91,7 +91,7 @@ const Navbar = () => {
                         <List
                             size="sm"
                             withPadding
-                            spacing='2rem'
+                            spacing='md'
                         >
                             <List.Item
                                 className={classes.link}
@@ -104,7 +104,7 @@ const Navbar = () => {
                             <List.Item
                                 className={classes.link}
                                 component={Link}
-                                to="/produkter/dagvatten"
+                                to="/produkter"
                                 icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-shop"></i></ActionIcon>}>
                                 Produkter
                             </List.Item>
@@ -112,8 +112,6 @@ const Navbar = () => {
                             <List
                                 size="sm"
                                 withPadding
-                                spacing='sm'
-                                mt='2rem'
                             >
                                 <List.Item
                                     className={classes.link}
@@ -140,26 +138,26 @@ const Navbar = () => {
                                 </List.Item>
 
                                 <List.Item
-                                className={classes.link}
-                                component={Link}
-                                to='/instruktioner'
+                                    className={classes.link}
+                                    component={Link}
+                                    to='/instruktioner'
                                     icon={<ActionIcon color='blue' variant="white"><i className="fa-solid fa-wrench"></i></ActionIcon>}>
                                     Monterings instruktioner
                                 </List.Item>
                             </List>
 
                             <List.Item
-                            className={classes.link}
-                            component={Link}
-                            to='/dokumentation'
+                                className={classes.link}
+                                component={Link}
+                                to='/dokumentation'
                                 icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-folder-open"></i></ActionIcon>}>
                                 Dokumentation
                             </List.Item>
 
                             <List.Item
-                            className={classes.link}
-                            component={Link}
-                            to='/kontakta-oss'
+                                className={classes.link}
+                                component={Link}
+                                to='/kontakta-oss'
                                 icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-phone"></i></ActionIcon>}>
                                 Kontakta Oss
                             </List.Item>
@@ -175,6 +173,7 @@ const Navbar = () => {
                     </Group>
                 </Group>
 
+
                 {/* navlinks */}
                 <Group spacing={50} className={classes.links}>
                     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
@@ -182,7 +181,7 @@ const Navbar = () => {
                         <Text to='/' component={NavLink} className={classes.link}>Home</Text>
 
                         <Menu.Target
-                            to='/produkter/dagvatten'
+                            to='/produkter'
                             component={NavLink}
                             className={classes.link}
                         >

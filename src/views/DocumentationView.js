@@ -51,7 +51,7 @@ const Documentation = () => {
             />
             <div>
               <Title size="h4" color='blue' fw={700}>{doc.title}</Title>
-              <Spoiler maxHeight={200} showLabel="Show more" hideLabel="Hide">
+              <Spoiler maxHeight={200} showLabel="Visa mer" hideLabel="Göm">
                 <Text>{doc.description}</Text>
               </Spoiler>
               <Text>Ladda ner hela uppsatsen <a href={doc.link}> här.</a></Text>

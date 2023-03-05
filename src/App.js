@@ -10,6 +10,7 @@ import GranulatView from './views/GranulatView'
 import DagvattenView from './views/DagvattenView';
 import OtherProductsView from './views/OtherProductsView'
 import OrderView from './views/OrderView';
+import ProductsView from './views/ProductsView';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/produkter/granulat' element={<GranulatView />} />
           <Route path='/produkter/annat' element={<OtherProductsView />} />
           <Route path='/order' element={<OrderView />} />
+          <Route path='/produkter' element={<ProductsView />} />
         </Routes>
 
         <Footer />

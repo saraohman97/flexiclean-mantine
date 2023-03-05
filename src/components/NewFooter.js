@@ -1,24 +1,16 @@
-import { createStyles, Text, Container, ActionIcon, Group, CopyButton } from '@mantine/core';
+import { ActionIcon, AspectRatio, Container, CopyButton, createStyles, Divider, Group, Text } from '@mantine/core'
+import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
-import { Link } from 'react-router-dom'
 
 const useStyles = createStyles((theme) => ({
     footer: {
+        textAlign: 'center',
         marginTop: 60,
         paddingTop: theme.spacing.xl * 2,
         paddingBottom: theme.spacing.xl * 2,
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
         borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
-    },
-
-    logo: {
-        maxWidth: 200,
-
-        [theme.fn.smallerThan('sm')]: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-        },
     },
 
     description: {
@@ -48,10 +40,6 @@ const useStyles = createStyles((theme) => ({
         [theme.fn.smallerThan('sm')]: {
             display: 'none',
         },
-    },
-
-    wrapper: {
-        width: 160,
     },
 
     link: {
@@ -100,54 +88,31 @@ const useStyles = createStyles((theme) => ({
         color: '#339AF0',
         textDecoration: 'none',
         size: "lg",
-    }
+    },
 }));
 
-const Footer = () => {
+const NewFooter = () => {
     const { classes } = useStyles();
 
     return (
-        <footer className={classes.footer}>
-            <Container className={classes.inner}>
-                <div className={classes.logo}>
-                    <Link to='/'>
-                        <img src={logo} className='footer-logotype' alt="" />
-                    </Link>
-                    <Text size="xs" color="dimmed" className={classes.description}>
-                        FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.
-                    </Text>
-                </div>
-                <div className={classes.groups}>
-                    <div className={classes.wrapper}>
-                        <Link className={classes.link} to='/'>
-                            <Text className={classes.title}>Products</Text>
-                        </Link>
+        <Group className={classes.footer}>
+            <Container w='50vh'>
+                <Link to='/'>
+                    <img src={logo} className='footer-logotype' alt="" />
+                </Link>
 
-                        <Link className={classes.link} to='/'>Våra filter</Link>
+                <Text size="xs" color="dimmed" className={classes.description}>
+                    FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.
+                </Text>
 
-                        <Link className={classes.link} to='/instruktioner'>Installations instruktioner</Link>
+                <Divider my="sm" />
 
-                        {/* <Link className={classes.link} to='/products'>Leverans kartan</Link> */}
-                    </div>
 
-                    <div className={classes.wrapper}>
-                        <Link className={classes.link} to='/dokumentation'>
-                            <Text className={classes.title}>Dokumentation</Text>
-                        </Link>
-
-                        <Link className={classes.link} to='/kontakta oss'>
-                            <Text className={classes.title}>Kontakta Oss</Text>
-                        </Link>
-                    </div>
-                </div>
-
-            </Container>
-            <Container className={classes.afterFooter}>
                 <Text color="dimmed" size="sm">
                     Copyright © 2015
                 </Text>
 
-                <Group spacing={0} className={classes.social} position="right" noWrap>
+                <Group spacing={0} className={classes.social} position="center" noWrap>
                     <ActionIcon color='blue'>
                         <a href="https://twitter.com/FlexiClean" className={classes.icon}>
                             <i className="fa-brands fa-twitter"></i>
@@ -169,8 +134,17 @@ const Footer = () => {
                     </CopyButton>
                 </Group>
             </Container>
-        </footer>
-    )
 
+            <Container w='50vh'>
+                <AspectRatio ratio={16 / 9}>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Brandthovdagatan%2016%20721%2035%20V%C3%A4ster%C3%A5s&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        title='This is a map to find FlexiClean'
+                    />
+                </AspectRatio>
+            </Container>
+        </Group>
+    )
 }
-export default Footer;
+
+export default NewFooter

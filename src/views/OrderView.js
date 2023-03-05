@@ -9,7 +9,6 @@ import {
     SimpleGrid,
     createStyles,
     Title,
-    NumberInput,
 } from '@mantine/core';
 
 

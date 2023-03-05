@@ -20,11 +20,6 @@
     object-position: left;
 }
 
-/* a {
-    text-decoration: none;
-    color: gray;
-} */
-
 @media screen and (min-width: 500px) {
     .logotype {
         width: 240px;

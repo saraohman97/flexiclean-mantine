@@ -1,4 +1,4 @@
-import { BackgroundImage, Blockquote, Button, Group, Image, Title, Text, Flex, createStyles, Container, useMantineTheme, Paper } from '@mantine/core';
+import { BackgroundImage, Button, Group, Image, Title, Text, Flex, createStyles, Container, useMantineTheme, Paper } from '@mantine/core';
 import React from 'react'
 import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -8,10 +8,12 @@ import { useMediaQuery } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
     header: {
-        height: '90vh',
+        // backgroundColor: 'lightblue',
+        height: '80vh',
         padding: '20px',
         alignItems: 'flex-start',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
+        // justifyContent: 'space-evenly',
         flexDirection: 'column',
 
         [theme.fn.largerThan('sm')]: {
@@ -105,18 +107,23 @@ const HomeView = () => {
     return (
         <>
             <BackgroundImage
-                src="https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                // src="https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 w='auto'
             >
                 <Navbar />
-                <Flex className={classes.header}>
-                    <Blockquote
-                        color='white'
-                    >
-                        <Title size="h2">Det finns inga önskebrunnar. Men väl en lyckosam lösning.</Title>
-                    </Blockquote>
-                    <Button color="blue" variant="light">Kontakta oss</Button>
+
+                <Flex>
+                    <Flex className={classes.header} gap='lg'>
+                        <Title fw='bold' size="h1">Det finns inga önskebrunnar. Men väl en lyckosam lösning.</Title>
+                        <Text>FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.</Text>
+                        <Button color="blue" variant="light">Kontakta oss</Button>
+                    </Flex>
+                    <Image
+                    style={{ alignSelf: 'end' }}
+                    src='https://dst15js82dk7j.cloudfront.net/252829/70973528-Bb4i8.jpg'
+                    />
                 </Flex>
+
             </BackgroundImage>
 
             <Container bg='white' py='10px'>
@@ -145,7 +152,7 @@ const HomeView = () => {
                         <Image
                             maw='600px'
                             src='https://h24-original.s3.amazonaws.com/252829/28712055-9XX6s.jpg'
-                            // caption="My dog begging for treats"
+                        // caption="My dog begging for treats"
                         />
                     </Flex>
                 </Group>

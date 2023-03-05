@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { createStyles, Table, ScrollArea, Title, Text, Box, Button, Group, Flex, Paper, Container, Stack } from '@mantine/core';
+import { createStyles, Table, ScrollArea, Title, Text, Flex } from '@mantine/core';
 import axios from 'axios';
 
 const useStyles = createStyles((theme) => ({
