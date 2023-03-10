@@ -75,12 +75,11 @@ const useStyles = createStyles((theme) => ({
         },
     },
     drawerContent: {
-        height: '100vh',
+        // height: '100vh',
         overflowY: 'scroll',
         display: 'flex',
         justifyContent: 'space-between',
-        flexDirection: 'column'
-        ,
+        flexDirection: 'column',
     }
 }));
 
@@ -252,9 +251,8 @@ const Navbar = () => {
                 <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open}>
                     Beställ Filterpåsar
                 </Button>
-                <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" padding='1rem'>
-                    <OrderModal />
-                    {/* {content} */}
+                <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" withCloseButton={false}>
+                    <OrderModal close={close} />
                 </Drawer>
             </Container>
         </Header>

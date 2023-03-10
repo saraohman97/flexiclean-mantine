@@ -7,47 +7,60 @@ import {
     createStyles,
     Title,
     Flex,
-    ScrollArea,
+    CloseButton,
 } from '@mantine/core';
 
 const useStyles = createStyles((theme) => {
-    const BREAKPOINT = theme.fn.smallerThan('sm');
 
     return {
 
         form: {
-            height: '100%',
             boxSizing: 'border-box',
             flex: 1,
-            padding: theme.spacing.xl,
-            paddingLeft: `calc(${theme.spacing.xl} * 2)`,
             borderLeft: 0,
-
-            [BREAKPOINT]: {
-                padding: theme.spacing.md,
-                paddingLeft: theme.spacing.md,
+            padding: '1rem',
+        },
+        title: {
+            marginTop: 'lg',
+            paddingInline: '1rem',
+            [theme.fn.smallerThan('sm')]: {
+                paddingInline: '0rem'
             },
         },
         fields: {
-            height: '60vh',
-            // display: 'flex',
-            // flexDirection: 'column',
-            // justifyContent: 'space-between',
-            // gap: '2rem'
+            height: '100vh',
+            paddingInline: '1rem',
+            [theme.fn.smallerThan('sm')]: {
+                paddingInline: '0rem'
+            },
         },
         btnSection: {
-            position: 'sticky',
             backgroundColor: 'white',
+            position: 'sticky',
             bottom: 0,
             left: 0,
             right: 0,
-            padding: '1rem 1rem 0rem',
+            padding: '1rem 1rem 2rem',
+        },
+        flex: {
+            width: '100%',
+            justifyContent: 'space-between',
+            marginBlock: 'lg',
+            [theme.fn.smallerThan('sm')]: {
+                flexDirection: 'column',
+            },
+        },
+        width: {
+            maxWidth: '30%',
+            [theme.fn.smallerThan('sm')]: {
+                maxWidth: '100%',
+            },
         }
     };
 });
 
 
-const OrderView = () => {
+const OrderView = ({ close }) => {
     const [bookingNumber, setBookingNumber] = useState('')
     const [password, setPassword] = useState('')
     const [amount, setAmount] = useState('')
@@ -72,13 +85,15 @@ const OrderView = () => {
 
     return (
         <form className={classes.form} onSubmit={handleSubmit}>
+            <Group position='right'>
+                <CloseButton onClick={close} title="Close popover" size="xl" iconSize={20} />
+            </Group>
+            <Title className={classes.title}>Beställ filterpåsar</Title>
+
             {!next && (
                 <>
-                   <Title>Beställ filterpåsar</Title>
-
-                    <ScrollArea type="always" className={classes.fields}>
-                        <Text>Filterpåsen som består av en blandning av furubark och träflis byts normalt en gång per år. Med vårt nya bokningssystem beställs filterpåsar smidigt genom att knappa in kundnumret / QR-koden som finns på kvittot / produkten, sedan skickas filterpåsarna till önskad leveransplats. </Text>
-
+                    <div className={classes.fields}>
+                        <Text mb='lg'>Filterpåsen som består av en blandning av furubark och träflis byts normalt en gång per år. Med vårt nya bokningssystem beställs filterpåsar smidigt genom att knappa in kundnumret / QR-koden som finns på kvittot / produkten, sedan skickas filterpåsarna till önskad leveransplats. </Text>
                         <TextInput
                             label="Bokningsnummer"
                             placeholder="12345678A"
@@ -95,7 +110,7 @@ const OrderView = () => {
                             onChange={e => setPassword(e.target.value)}
                         />
 
-                        <Flex w='100%' justify='space-between' gap='lg' my='lg'>
+                        <Flex className={classes.flex} gap='lg' mt='lg'>
                             <TextInput
                                 w='100%'
                                 label="Ansvariges namn"
@@ -105,7 +120,7 @@ const OrderView = () => {
                             />
 
                             <TextInput
-                                maw='30%'
+                                className={classes.width}
                                 label="Antal filterpåsar"
                                 placeholder='1'
                                 required
@@ -113,7 +128,7 @@ const OrderView = () => {
                                 onChange={e => setAmount(e.target.value)}
                             />
                         </Flex>
-                    </ScrollArea>
+                    </div>
 
                     <Group className={classes.btnSection} position="right" mt="xl">
                         <Button onClick={() => setNext(true)}>Nästa steg</Button>
@@ -122,8 +137,8 @@ const OrderView = () => {
             )}
             {next && (
                 <>
-                    <ScrollArea type="always" className={classes.fields}>
-                        <Text>Här kan ni ändra leveransaddress.</Text>
+                    <div className={classes.fields}>
+                        <Text mb='lg'>Här kan ni ändra leveransaddress.</Text>
 
                         <TextInput
                             label="adress"
@@ -133,7 +148,7 @@ const OrderView = () => {
                             onChange={e => setBookingNumber(e.target.value)}
                         />
 
-                        <Flex w='100%' justify='space-between' gap='lg' my='lg'>
+                        <Flex className={classes.flex} gap='lg' mt='lg'>
                             <TextInput
                                 w='100%'
                                 label="Ort"
@@ -144,7 +159,8 @@ const OrderView = () => {
                             />
 
                             <TextInput
-                                maw='30%'
+                                className={classes.width}
+                                // maw='30%'
                                 label="Postnummer"
                                 placeholder='111 22'
                                 required
@@ -152,7 +168,7 @@ const OrderView = () => {
                                 onChange={e => setAmount(e.target.value)}
                             />
                         </Flex>
-                    </ScrollArea>
+                    </div>
 
                     <Flex position="center" justify='space-between' mt="xl" className={classes.btnSection}>
                         <Button onClick={() => setNext(false)} variant="default">Tillbaka</Button>
@@ -161,7 +177,7 @@ const OrderView = () => {
 
                 </>
             )}
-        </form>
+        </form >
     )
 }
 
