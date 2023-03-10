@@ -6,11 +6,11 @@ import Footer from './components/Footer'
 import ContactUsView from './views/ContactUsView'
 import DocumentationView from './views/DocumentationView'
 import InstructionsView from './views/InstructionsView'
-import GranulatView from './views/GranulatView'
-import DagvattenView from './views/DagvattenView';
-import OtherProductsView from './views/OtherProductsView'
+import GranulatView from './views/products/GranulatView'
+import DagvattenView from './views/products/DagvattenView';
+import OtherProductsView from './views/products/OtherProductsView'
 import OrderView from './views/OrderView';
-import ProductsView from './views/ProductsView';
+import ProductsView from './views/products/ProductsView';
 
 function App() {
   return (

@@ -8,12 +8,10 @@ import { useMediaQuery } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
     header: {
-        // backgroundColor: 'lightblue',
         height: '80vh',
         padding: '20px',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        // justifyContent: 'space-evenly',
         flexDirection: 'column',
 
         [theme.fn.largerThan('sm')]: {
@@ -96,6 +94,7 @@ const HomeView = () => {
     const { classes } = useStyles()
 
     const autoplay = useRef(Autoplay({ delay: 4000 }));
+    // const autoplay = useRef(Autoplay);
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
     const slides = data.map((item) => (
@@ -165,7 +164,7 @@ const HomeView = () => {
                 slideSize="25%"
                 breakpoints={[{ maxWidth: 'xs', slideSize: '100%', slideGap: 2 }]}
                 slideGap="xl"
-                align="start"
+                // align="start"
                 slidesToScroll={mobile ? 1 : 2}
                 plugins={[autoplay.current]}
                 p='md'

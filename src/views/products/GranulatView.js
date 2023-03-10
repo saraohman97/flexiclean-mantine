@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import GranulatComponent from '../components/products/GranulatComponent'
+import Navbar from '../../components/Navbar'
+import GranulatComponent from '../../components/products/GranulatComponent'
 
 const GranulatView = () => {
 

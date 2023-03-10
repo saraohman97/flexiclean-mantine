@@ -11,12 +11,15 @@ import {
     Menu,
     Flex,
     Text,
+    Title,
 } from '@mantine/core';
 import '../App.css'
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { VscChevronDown } from "react-icons/vsc";
 import logo from '../assets/logo.png'
+import { useDisclosure } from '@mantine/hooks';
+import OrderModal from '../components/OrderModal'
 
 const useStyles = createStyles((theme) => ({
     header: {
@@ -70,12 +73,21 @@ const useStyles = createStyles((theme) => ({
         [theme.fn.smallerThan('xs')]: {
             display: 'none',
         },
+    },
+    drawerContent: {
+        height: '100vh',
+        overflowY: 'scroll',
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'column'
+        ,
     }
 }));
 
 const Navbar = () => {
     const { classes } = useStyles();
     const [opened, setOpened] = useState(false);
+    const [openedOrder, { open, close }] = useDisclosure(false);
 
     return (
         <Header className={classes.header}>
@@ -237,9 +249,13 @@ const Navbar = () => {
                 </Group>
 
                 {/* button */}
-                <Button radius="xl" sx={{ height: 30 }} className={classes.button} component={Link} to='/order' >
+                <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open}>
                     Beställ Filterpåsar
                 </Button>
+                <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" padding='1rem'>
+                    <OrderModal />
+                    {/* {content} */}
+                </Drawer>
             </Container>
         </Header>
     );
