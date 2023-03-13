@@ -1,3 +1,4 @@
+import { Container } from '@mantine/core'
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import GranulatComponent from '../../components/products/GranulatComponent'
@@ -8,7 +9,9 @@ const GranulatView = () => {
     <>
       <Navbar />
 
-      <GranulatComponent />
+      <Container>
+        <GranulatComponent />
+      </Container>
     </>
   )
 }

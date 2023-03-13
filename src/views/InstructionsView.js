@@ -16,7 +16,7 @@ const Instructions = () => {
             Montage görs av två personer utan specialverktyg på drygt 2 minuter.
           </Text>
 
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio ratio={16 / 9} mt='lg'>
             <iframe
               src="https://www.youtube.com/embed/HU7RE3Jm3bE"
               title="YouTube video player"
@@ -36,7 +36,7 @@ const Instructions = () => {
           Filter bytes av en person utan specialverktyg på drygt 1,5 minut.
           </Text>
 
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio ratio={16 / 9} mt='lg'>
             <iframe
               src="https://www.youtube.com/embed/ZK2RtdIK_e0"
               title="YouTube video player"

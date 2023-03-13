@@ -1,6 +1,7 @@
-import { createStyles, Text, Container, ActionIcon, Group, CopyButton } from '@mantine/core';
+import { createStyles, Text, Container, ActionIcon, Group, CopyButton, Button, Tooltip } from '@mantine/core';
 import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
+import { IconCheck } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
     footer: {
@@ -10,17 +11,14 @@ const useStyles = createStyles((theme) => ({
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
         borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
     },
-
     logo: {
         maxWidth: 200,
-
         [theme.fn.smallerThan('sm')]: {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
         },
     },
-
     description: {
         marginTop: 5,
 
@@ -29,7 +27,6 @@ const useStyles = createStyles((theme) => ({
             textAlign: 'center',
         },
     },
-
     inner: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -39,7 +36,6 @@ const useStyles = createStyles((theme) => ({
             alignItems: 'center',
         },
     },
-
     groups: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -49,11 +45,9 @@ const useStyles = createStyles((theme) => ({
             display: 'none',
         },
     },
-
     wrapper: {
         width: 160,
     },
-
     link: {
         display: 'block',
         color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
@@ -61,20 +55,22 @@ const useStyles = createStyles((theme) => ({
         paddingTop: 3,
         paddingBottom: 3,
         textDecoration: 'none',
-
         '&:hover': {
             textDecoration: 'underline',
         },
     },
-
     title: {
         fontSize: theme.fontSizes.lg,
         fontWeight: 700,
         fontFamily: `Greycliff CF, ${theme.fontFamily}`,
         marginBottom: theme.spacing.xs / 2,
-        color: 'gray'
+        color: 'gray',
+        display: 'block',
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
     },
-
     afterFooter: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -82,20 +78,16 @@ const useStyles = createStyles((theme) => ({
         marginTop: theme.spacing.xl,
         paddingTop: theme.spacing.xl,
         paddingBottom: theme.spacing.xl,
-        borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
-            }`,
-
+        borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]}`,
         [theme.fn.smallerThan('sm')]: {
             flexDirection: 'column',
         },
     },
-
     social: {
         [theme.fn.smallerThan('sm')]: {
             marginTop: theme.spacing.xs,
         },
     },
-
     icon: {
         color: '#339AF0',
         textDecoration: 'none',
@@ -110,34 +102,30 @@ const Footer = () => {
         <footer className={classes.footer}>
             <Container className={classes.inner}>
                 <div className={classes.logo}>
-                    <Link to='/'>
+                    <Text component={Link} to='/'>
                         <img src={logo} className='footer-logotype' alt="" />
-                    </Link>
+                    </Text>
                     <Text size="xs" color="dimmed" className={classes.description}>
                         FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.
                     </Text>
                 </div>
                 <div className={classes.groups}>
                     <div className={classes.wrapper}>
-                        <Link className={classes.link} to='/'>
-                            <Text className={classes.title}>Products</Text>
-                        </Link>
+                        <Text className={classes.title} component={Link} to='/produkter'>Produkter</Text>
 
-                        <Link className={classes.link} to='/'>Våra filter</Link>
+                        <Text className={classes.link} component={Link} to='/produkter/dagvatten'>Dagvattenrening</Text>
 
-                        <Link className={classes.link} to='/instruktioner'>Installations instruktioner</Link>
+                        <Text className={classes.link} component={Link} to='/produkter/granulat'>Granulat</Text>
 
-                        {/* <Link className={classes.link} to='/products'>Leverans kartan</Link> */}
+                        <Text className={classes.link} component={Link} to='/produkter/annat'>Stora och små projekt</Text>
+
+                        <Link className={classes.link} to='/instruktioner'>Monterings instruktioner</Link>
                     </div>
 
                     <div className={classes.wrapper}>
-                        <Link className={classes.link} to='/dokumentation'>
-                            <Text className={classes.title}>Dokumentation</Text>
-                        </Link>
+                        <Text component={Link} to='/dokumentation' className={classes.title}>Dokumentation</Text>
 
-                        <Link className={classes.link} to='/kontakta oss'>
-                            <Text className={classes.title}>Kontakta Oss</Text>
-                        </Link>
+                        <Text component={Link} to='/kontakta-oss' className={classes.title}>Kontakta Oss</Text>
                     </div>
                 </div>
 
@@ -160,17 +148,18 @@ const Footer = () => {
                         </a>
                     </ActionIcon>
 
-                    <CopyButton value="info@flexiclean.eu">
+                    <CopyButton value="info@flexiclean.eu" timeout={2000}>
                         {({ copied, copy }) => (
-                            <ActionIcon size='lg' color={copied ? 'teal' : 'blue'} onClick={copy}>
-                                <i className="fa-regular fa-envelope"></i>
-                            </ActionIcon>
+                            <Tooltip label={copied ? 'Kopierat' : 'Kopiera'} withArrow position="right">
+                                <ActionIcon color={copied ? 'teal' : 'blue'} onClick={copy}>
+                                    {copied ? <IconCheck size="1rem" /> : <i className="fa-regular fa-envelope"></i>}
+                                </ActionIcon>
+                            </Tooltip>
                         )}
                     </CopyButton>
                 </Group>
             </Container>
         </footer>
     )
-
 }
 export default Footer;

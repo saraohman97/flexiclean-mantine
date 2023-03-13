@@ -35,7 +35,6 @@ const DagvattenTable = () => {
                 setData(res.data);
             })
     }, [])
-    // console.log(data[0]?.dagvatten.map(i => i.id))
 
     if (!data) return null;
 

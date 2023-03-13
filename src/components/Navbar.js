@@ -11,7 +11,6 @@ import {
     Menu,
     Flex,
     Text,
-    Title,
 } from '@mantine/core';
 import '../App.css'
 import { Link, NavLink } from 'react-router-dom';
@@ -63,11 +62,6 @@ const useStyles = createStyles((theme) => ({
             backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
         },
     },
-
-    linkLabel: {
-        marginRight: 5,
-    },
-
     button: {
         display: 'block',
         [theme.fn.smallerThan('xs')]: {
@@ -75,11 +69,7 @@ const useStyles = createStyles((theme) => ({
         },
     },
     drawerContent: {
-        // height: '100vh',
         overflowY: 'scroll',
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'column',
     }
 }));
 
@@ -186,7 +176,7 @@ const Navbar = () => {
 
 
                 {/* navlinks */}
-                <Group spacing={50} className={classes.links}>
+                <Group spacing={30} className={classes.links}>
                     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
 
                         <Text to='/' component={NavLink} className={classes.link}>Home</Text>
@@ -248,12 +238,12 @@ const Navbar = () => {
                 </Group>
 
                 {/* button */}
-                <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open}>
+                <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open} component={Link} to='/kontakta-oss'>
                     Beställ Filterpåsar
                 </Button>
-                <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" withCloseButton={false}>
+                {/* <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" withCloseButton={false}>
                     <OrderModal close={close} />
-                </Drawer>
+                </Drawer> */}
             </Container>
         </Header>
     );

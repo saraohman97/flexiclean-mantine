@@ -103,35 +103,9 @@ const useStyles = createStyles((theme) => {
   };
 });
 
-
 const ContactUsView = () => {
-  const [contactInfo, setContactInfo] = useState("");
   const { classes } = useStyles();
-  // const [values, setValues] = useState({
-  //   fullName: '',
-  //   email: '',
-  //   subject: '',
-  //   message: ''
-  // })
-
-  // const [fullName, fullName] = useState('')
-  // const [email, email] = useState('')
-  // const [subject, subject] = useState('')
-  // const [message, message] = useState('')
-
-  // const form = useForm({
-  //   initialValues: {
-  //     fullName: '',
-  //     email: '',
-  //     subject: '',
-  //     message: '',
-  //     termsOfService: false,
-  //   },
-
-  //   validate: {
-  //     email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-  //   },
-  // });
+  const [contactInfo, setContactInfo] = useState("");
 
   const [fullName, setFullName] = useState('')
   const [mail, setMail] = useState('')
@@ -158,24 +132,12 @@ const ContactUsView = () => {
       .then(response => {
         console.log(response)
       })
-
-    // const addMessage = { fullName, email, subject, message }
-    // fetch('http://localhost:9000/contactUsForm', {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(addMessage)
-    // }).then(() => {
-    //   console.log(addMessage)
-    // })
   }
 
-  // const onChange = e => {
-  //   setValues({ ...values, [e.target.name]: e.target.value })
-  // }
 
   return (
     <>
-      <Navbar />
+      <Navbar /> 
 
       <Container className={classes.wrapper}>
         <div className={classes.contacts}>
@@ -194,7 +156,6 @@ const ContactUsView = () => {
           ))}
         </div>
 
-        {/* <form className={classes.form} onSubmit={(event) => event.preventDefault()}> */}
         <form className={classes.form} onSubmit={handleSubmit}>
           <Text size="lg" weight={700} className={classes.title}>
             Hör av dig

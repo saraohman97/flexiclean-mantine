@@ -1,5 +1,6 @@
-import { Container, createStyles, Flex, Image, Text, Title } from '@mantine/core'
+import { Button, createStyles, Flex, Group, Image, Stack, Text, Title } from '@mantine/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import GranulatTable from '../tables/GranulatTable'
 
 const useStyles = createStyles((theme) => ({
@@ -7,7 +8,7 @@ const useStyles = createStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: '3rem',
+        gap: 'lg',
         [theme.fn.smallerThan('md')]: {
             flexDirection: 'column-reverse',
             gap: '1rem',
@@ -19,7 +20,7 @@ const GranulatComponent = () => {
     const { classes } = useStyles()
 
     return (
-        <Container className={classes.mobile}>
+        <div className={classes.mobile}>
             <Flex direction='column' w='100%'>
                 <Title>FlexiCleans Granulatkassetter</Title>
                 <Title size='h3'>För dagvattenrening och Granulatfiltrering (fotbollskassetten)</Title>
@@ -27,9 +28,9 @@ const GranulatComponent = () => {
 
                 <Title mt='lg' size='h3'>Montage</Title>
                 <Text>Att tänka på vid montaget är att filterkassetten kräver minst 8000/1000 mm djup i brunnen och med slät innersida på brunnen. Självaste "hålet" i beteckning måste vara 330 mm i diameter. Dessutom kan teleskopbeteckning försvåra montaget. </Text>
+                <Button w='162px' component={Link} to='/instruktioner' my='lg'>Kolla montage video</Button>
                 <Title mt='lg' size='h3'>Filter storlekar</Title>
                 <GranulatTable />
-
             </Flex>
 
             <Image
@@ -37,7 +38,7 @@ const GranulatComponent = () => {
                 alt='flexiclean filter'
                 src='https://dst15js82dk7j.cloudfront.net/252829/95835856-Dul42.jpg'
             />
-        </Container>
+        </div>
     )
 }
 

@@ -5,8 +5,19 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from '@mantine/carousel';
 import Navbar from '../components/Navbar'
 import { useMediaQuery } from '@mantine/hooks';
+import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
+    homeWrapper: {
+        [theme.fn.largerThan('sm')]: {
+            gap: '5rem',
+            marginBottom: '5rem'
+        },
+        [theme.fn.largerThan('md')]: {
+            gap: '10rem',
+            marginBottom: '10rem'
+        },
+    },
     header: {
         height: '80vh',
         padding: '20px',
@@ -51,7 +62,7 @@ function CarouselCard({ image }) {
     );
 }
 
-const data = [
+const carouselData = [
     {
         image: 'https://dst15js82dk7j.cloudfront.net/252829/71094620-PeXgW.jpg',
         title: 'Delägare i AB Aros Rör & Svets',
@@ -97,14 +108,14 @@ const HomeView = () => {
     // const autoplay = useRef(Autoplay);
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
-    const slides = data.map((item) => (
+    const slides = carouselData.map((item) => (
         <Carousel.Slide key={item.title}>
             <CarouselCard {...item} />
         </Carousel.Slide>
     ));
 
     return (
-        <>
+        <Flex direction='column' className={classes.homeWrapper}>
             <BackgroundImage
                 // src="https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 w='auto'
@@ -115,11 +126,11 @@ const HomeView = () => {
                     <Flex className={classes.header} gap='lg'>
                         <Title fw='bold' size="h1">Det finns inga önskebrunnar. Men väl en lyckosam lösning.</Title>
                         <Text>FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.</Text>
-                        <Button color="blue" variant="light">Kontakta oss</Button>
+                        <Button color="blue" variant="light" component={Link} to='/kontakta-oss'>Kontakta oss</Button>
                     </Flex>
                     <Image
-                    style={{ alignSelf: 'end' }}
-                    src='https://dst15js82dk7j.cloudfront.net/252829/70973528-Bb4i8.jpg'
+                        style={{ alignSelf: 'end' }}
+                        src='https://dst15js82dk7j.cloudfront.net/252829/70973528-Bb4i8.jpg'
                     />
                 </Flex>
 
@@ -157,21 +168,22 @@ const HomeView = () => {
                 </Group>
             </Container>
 
-            <Title py='lg' ta='center'>Samarbeten</Title>
-            <Carousel
-                withControls={false}
-                loop
-                slideSize="25%"
-                breakpoints={[{ maxWidth: 'xs', slideSize: '100%', slideGap: 2 }]}
-                slideGap="xl"
-                // align="start"
-                slidesToScroll={mobile ? 1 : 2}
-                plugins={[autoplay.current]}
-                p='md'
-            >
-                {slides}
-            </Carousel>
-        </>
+            <div>
+                <Title py='lg' ta='center'>Samarbeten</Title>
+                <Carousel
+                    withControls={false}
+                    loop
+                    slideSize="25%"
+                    breakpoints={[{ maxWidth: 'xs', slideSize: '100%', slideGap: 2 }]}
+                    slideGap="xl"
+                    slidesToScroll={mobile ? 1 : 2}
+                    plugins={[autoplay.current]}
+                    p='md'
+                >
+                    {slides}
+                </Carousel>
+            </div>
+        </Flex>
     )
 }
 
