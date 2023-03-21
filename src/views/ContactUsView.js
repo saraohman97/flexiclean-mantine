@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Navbar from '../components/Navbar'
 import {
   Text,
   TextInput,
@@ -136,74 +135,70 @@ const ContactUsView = () => {
 
 
   return (
-    <>
-      <Navbar /> 
+    <Container className={classes.wrapper}>
+      <div className={classes.contacts}>
+        <Text size="lg" weight={700} className={classes.title}>
+          Kontakt information
+        </Text>
 
-      <Container className={classes.wrapper}>
-        <div className={classes.contacts}>
-          <Text size="lg" weight={700} className={classes.title}>
-            Kontakt information
-          </Text>
+        {contactInfo && contactInfo.map((info) => (
+          <Flex gap='20px' key={info.id} align='center'>
+            <ActionIcon className={info.icon} color='black' />
+            <div className={classes.fields}>
+              <Text color='black' size="xs">{info.title}</Text>
+              <Text color='black' size="lg">{info.description}</Text>
+            </div>
+          </Flex>
+        ))}
+      </div>
 
-          {contactInfo && contactInfo.map((info) => (
-            <Flex gap='20px' key={info.id} align='center'>
-              <ActionIcon className={info.icon} color='black' />
-              <div className={classes.fields}>
-                <Text color='black' size="xs">{info.title}</Text>
-                <Text color='black' size="lg">{info.description}</Text>
-              </div>
-            </Flex>
-          ))}
-        </div>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <Text size="lg" weight={700} className={classes.title}>
+          Hör av dig
+        </Text>
 
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <Text size="lg" weight={700} className={classes.title}>
-            Hör av dig
-          </Text>
-
-          <div className={classes.fields}>
-            <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput
-                label="Ditt namn"
-                placeholder="Ditt namn"
-                value={fullName}
-                onChange={e => setFullName(e.target.value)}
-              />
-              <TextInput
-                label="Din email"
-                placeholder="hello@mantine.dev"
-                required value={mail}
-                onChange={e => setMail(e.target.value)}
-              />
-            </SimpleGrid>
-
+        <div className={classes.fields}>
+          <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
             <TextInput
-              mt="md"
-              label="Ämne"
-              placeholder="Ämne"
-              required
-              value={subject}
-              onChange={e => setSubject(e.target.value)}
+              label="Ditt namn"
+              placeholder="Ditt namn"
+              value={fullName}
+              onChange={e => setFullName(e.target.value)}
             />
-
-            <Textarea
-              mt="md"
-              label="Ditt meddelande"
-              placeholder="Var snäll inkludera relevant information"
-              minRows={3}
-              value={message}
-              onChange={e => setMessage(e.target.value)}
+            <TextInput
+              label="Din email"
+              placeholder="hello@mantine.dev"
+              required value={mail}
+              onChange={e => setMail(e.target.value)}
             />
+          </SimpleGrid>
 
-            <Group position="right" mt="md">
-              <Button type="submit" className={classes.control}>
-                Skicka meddelande
-              </Button>
-            </Group>
-          </div>
-        </form>
-      </Container>
-    </>
+          <TextInput
+            mt="md"
+            label="Ämne"
+            placeholder="Ämne"
+            required
+            value={subject}
+            onChange={e => setSubject(e.target.value)}
+          />
+
+          <Textarea
+            mt="md"
+            label="Ditt meddelande"
+            placeholder="Var snäll inkludera relevant information"
+            minRows={3}
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+          />
+
+          <Group position="right" mt="md">
+            <Button type="submit" className={classes.control}>
+              Skicka meddelande
+            </Button>
+          </Group>
+        </div>
+      </form>
+    </Container>
   );
 }
 

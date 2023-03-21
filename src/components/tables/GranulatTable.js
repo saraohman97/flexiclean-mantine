@@ -36,7 +36,7 @@ const GranulatTable = () => {
             })
     }, [])
 
-    if (!data) return null;
+    if (!data) return (<h4>Kunde inte hämta data...</h4>);
 
     const rows = data[1]?.granulat.map((row) => (
         <tr key={row.id}>

@@ -3,7 +3,6 @@ import React from 'react'
 import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from '@mantine/carousel';
-import Navbar from '../components/Navbar'
 import { useMediaQuery } from '@mantine/hooks';
 import { Link } from 'react-router-dom';
 
@@ -105,7 +104,6 @@ const HomeView = () => {
     const { classes } = useStyles()
 
     const autoplay = useRef(Autoplay({ delay: 4000 }));
-    // const autoplay = useRef(Autoplay);
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
     const slides = carouselData.map((item) => (
@@ -120,8 +118,6 @@ const HomeView = () => {
                 // src="https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 w='auto'
             >
-                <Navbar />
-
                 <Flex>
                     <Flex className={classes.header} gap='lg'>
                         <Title fw='bold' size="h1">Det finns inga önskebrunnar. Men väl en lyckosam lösning.</Title>

@@ -34,9 +34,8 @@ const FilterbrunnarTable = () => {
                 setData(res.data);
             })
     }, [])
-    // console.log(data[0]?.dagvatten.map(i => i.id))
 
-    if (!data) return null;
+    if (!data) return (<h4>Kunde inte hämta data...</h4>);
 
     const rows = data[2]?.filterbrunnar.map((row) => (
         <tr key={row.id}>

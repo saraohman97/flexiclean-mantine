@@ -36,7 +36,7 @@ const DagvattenTable = () => {
             })
     }, [])
 
-    if (!data) return null;
+    if (!data) return (<h4>Kunde inte hämta data...</h4>);
 
     const rows = data[0]?.dagvatten.map((row) => (
         <tr key={row.id}>

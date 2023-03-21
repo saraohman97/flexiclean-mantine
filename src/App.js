@@ -11,6 +11,7 @@ import DagvattenView from './views/products/DagvattenView';
 import OtherProductsView from './views/products/OtherProductsView'
 import OrderView from './views/OrderView';
 import ProductsView from './views/products/ProductsView';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
           fontFamily: 'Zilla Slab, serif;',
         }}
       >
+        <Navbar />
+        
         <Routes>
           <Route path='/' element={<HomeView />} />
           <Route path='/kontakta-oss' element={<ContactUsView />} />
