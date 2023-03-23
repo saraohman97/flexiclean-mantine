@@ -99,7 +99,7 @@ const Navbar = () => {
                                 component={Link}
                                 to="/"
                                 icon={<ActionIcon color='blue' variant="light"><i className="fa-solid fa-house"></i></ActionIcon>}>
-                                Home
+                                Hem
                             </List.Item>
 
                             <List.Item
@@ -179,7 +179,7 @@ const Navbar = () => {
                 <Group spacing={30} className={classes.links}>
                     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
 
-                        <Text to='/' component={NavLink} className={classes.link}>Home</Text>
+                        <Text to='/' component={NavLink} className={classes.link}>Hem</Text>
 
                         <Menu.Target
                             to='/produkter'
@@ -238,12 +238,12 @@ const Navbar = () => {
                 </Group>
 
                 {/* button */}
-                <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open} component={Link} to='/kontakta-oss'>
+                <Button radius="xl" sx={{ height: 30 }} className={classes.button} onClick={open}>
                     Beställ Filterpåsar
                 </Button>
-                {/* <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" withCloseButton={false}>
+                <Drawer className={classes.drawerContent} opened={openedOrder} onClose={close} position='right' size="xl" withCloseButton={false}>
                     <OrderModal close={close} />
-                </Drawer> */}
+                </Drawer>
             </Container>
         </Header>
     );

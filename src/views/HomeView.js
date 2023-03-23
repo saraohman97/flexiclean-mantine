@@ -121,7 +121,7 @@ const HomeView = () => {
                 <Flex>
                     <Flex className={classes.header} gap='lg'>
                         <Title fw='bold' size="h1">Det finns inga önskebrunnar. Men väl en lyckosam lösning.</Title>
-                        <Text>FlexiClean är en ﬁlterhållare för rening av process- och dag-vatten.</Text>
+                        <Text>FlexiClean är en ﬁlterhållare för rening av process- och dagvatten.</Text>
                         <Button color="blue" variant="light" component={Link} to='/kontakta-oss'>Kontakta oss</Button>
                     </Flex>
                     <Image

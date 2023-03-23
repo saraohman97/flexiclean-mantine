@@ -8,6 +8,8 @@ import {
     Title,
     Flex,
     CloseButton,
+    Divider,
+    Paper,
 } from '@mantine/core';
 
 const useStyles = createStyles((theme) => {
@@ -28,19 +30,20 @@ const useStyles = createStyles((theme) => {
             },
         },
         fields: {
-            height: '100vh',
+            height: '80vh',
             paddingInline: '1rem',
             [theme.fn.smallerThan('sm')]: {
                 paddingInline: '0rem'
             },
         },
         btnSection: {
+            borderTop: '1px solid lightgray',
             backgroundColor: 'white',
             position: 'sticky',
             bottom: 0,
             left: 0,
             right: 0,
-            padding: '1rem 1rem 2rem',
+            padding: '2rem 1rem',
         },
         flex: {
             width: '100%',
@@ -88,10 +91,10 @@ const OrderView = ({ close }) => {
             <Group position='right'>
                 <CloseButton onClick={close} title="Close popover" size="xl" iconSize={20} />
             </Group>
-            <Title className={classes.title}>Beställ filterpåsar</Title>
 
             {!next && (
                 <>
+                <Title className={classes.title}>Beställ filterpåsar</Title>
                     <div className={classes.fields}>
                         <Text mb='lg'>Filterpåsen som består av en blandning av furubark och träflis byts normalt en gång per år. Med vårt nya bokningssystem beställs filterpåsar smidigt genom att knappa in kundnumret / QR-koden som finns på kvittot / produkten, sedan skickas filterpåsarna till önskad leveransplats. </Text>
                         <TextInput
@@ -128,20 +131,14 @@ const OrderView = ({ close }) => {
                                 onChange={e => setAmount(e.target.value)}
                             />
                         </Flex>
-                    </div>
 
-                    <Group className={classes.btnSection} position="right" mt="xl">
-                        <Button onClick={() => setNext(true)}>Nästa steg</Button>
-                    </Group>
-                </>
-            )}
-            {next && (
-                <>
-                    <div className={classes.fields}>
-                        <Text mb='lg'>Här kan ni ändra leveransaddress.</Text>
+                        {/* <Divider my='3rem' color='blue' /> */}
+
+                        {/* <Text mb='lg'>Här kan ni ändra leveransaddress.</Text> */}
 
                         <TextInput
-                            label="adress"
+                            mt='lg'
+                            label="Adress"
                             placeholder="Stora gatan 13A"
                             required
                             value={bookingNumber}
@@ -171,8 +168,22 @@ const OrderView = ({ close }) => {
                     </div>
 
                     <Flex position="center" justify='space-between' mt="xl" className={classes.btnSection}>
-                        <Button onClick={() => setNext(false)} variant="default">Tillbaka</Button>
                         <Button type='submit'>Lägg beställning</Button>
+                        <Button onClick={() => setNext(true)} variant="default">Är du inte kund?</Button>
+                    </Flex>
+                </>
+            )}
+            {next && (
+                <>
+                <Title className={classes.title}>Beställ filterkassetter</Title>
+
+                    <Paper className={classes.fields} h='70vh'>
+                        <Text>Pitch här</Text>
+                    </Paper>
+
+                    <Flex position="center" justify='space-between' mt="xl" className={classes.btnSection}>
+                        <Button onClick={() => setNext(false)} variant="default">Tillbaka</Button>
+                        <Button type='submit'>Kontakta oss för mer information</Button>
                     </Flex>
 
                 </>
