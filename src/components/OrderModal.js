@@ -8,9 +8,10 @@ import {
     Title,
     Flex,
     CloseButton,
-    Divider,
     Paper,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
+import axios from 'axios';
 
 const useStyles = createStyles((theme) => {
 
@@ -30,10 +31,15 @@ const useStyles = createStyles((theme) => {
             },
         },
         fields: {
-            height: '80vh',
             paddingInline: '1rem',
             [theme.fn.smallerThan('sm')]: {
                 paddingInline: '0rem'
+            },
+            [theme.fn.largerThan('sm')]: {
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: '98vh',
             },
         },
         btnSection: {
@@ -44,6 +50,16 @@ const useStyles = createStyles((theme) => {
             left: 0,
             right: 0,
             padding: '2rem 1rem',
+
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '2rem',
+            overflow: 'hidden',
+        },
+        nextBtn: {
+            [theme.fn.smallerThan('sm')]: {
+                width: '7.5rem'
+            },
         },
         flex: {
             width: '100%',
@@ -64,53 +80,59 @@ const useStyles = createStyles((theme) => {
 
 
 const OrderView = ({ close }) => {
-    const [bookingNumber, setBookingNumber] = useState('')
-    const [password, setPassword] = useState('')
-    const [amount, setAmount] = useState('')
-    const [bookerName, setBookerName] = useState('')
     const { classes } = useStyles();
 
-    const handleSubmit = e => {
-        e.preventDefault()
 
-        const addBooking = { bookingNumber, password, amount, bookerName }
+    const form = useForm({
+        initialValues: { bookingNumber: '', password: '', bookerName: '', amount: '', address: '', county: '', zip: '' },
 
-        fetch('http://localhost:9000/orderForm', {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(addBooking)
-        }).then(() => {
-            console.log(addBooking)
-        })
-    }
+        // functions will be used to validate values at corresponding key
+        validate: {
+
+            bookingNumber: (value) => (value.length < 2 ? 'Inkorrekt bokningsnummer' : null),
+            password: (value) => (value.length < 2 ? 'Inkorrekt lösenord' : null),
+            
+            bookerName: (value) => (value.length < 2 ? 'Måste ha minst 2 karaktärer' : null),
+            amount: (value) => (value.length < 1 ? 'Välj antal' : null),
+            address: (value) => (value.length <= 0 ? 'Kan inte vara tom' : null),
+            county: (value) => (value.length <= 0 ? 'Kan inte vara tom' : null),
+            zip: (value) => (value.length <= 0 ? 'Kan inte vara tom' : null),
+        },
+    });
+
+    const handleSubmit = (data) => {
+        form.reset();
+
+        axios
+            .post("http://localhost:9000/orderForm", { data })
+            .then(response => {
+                console.log(response)
+            })
+    };
 
     const [next, setNext] = useState(false);
 
     return (
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form} onSubmit={form.onSubmit((data) => handleSubmit(data))}>
             <Group position='right'>
                 <CloseButton onClick={close} title="Close popover" size="xl" iconSize={20} />
             </Group>
 
             {!next && (
                 <>
-                <Title className={classes.title}>Beställ filterpåsar</Title>
+                    <Title className={classes.title}>Beställ filterpåsar</Title>
                     <div className={classes.fields}>
                         <Text mb='lg'>Filterpåsen som består av en blandning av furubark och träflis byts normalt en gång per år. Med vårt nya bokningssystem beställs filterpåsar smidigt genom att knappa in kundnumret / QR-koden som finns på kvittot / produkten, sedan skickas filterpåsarna till önskad leveransplats. </Text>
                         <TextInput
                             label="Bokningsnummer"
                             placeholder="12345678A"
-                            required
-                            value={bookingNumber}
-                            onChange={e => setBookingNumber(e.target.value)}
+                            {...form.getInputProps('bookingNumber')}
                         />
                         <TextInput
                             mt='lg'
                             label="Lösenord"
                             placeholder="Lösenord123"
-                            required
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
+                            {...form.getInputProps('password')}
                         />
 
                         <Flex className={classes.flex} gap='lg' mt='lg'>
@@ -118,31 +140,22 @@ const OrderView = ({ close }) => {
                                 w='100%'
                                 label="Ansvariges namn"
                                 placeholder="John Doe"
-                                value={bookerName}
-                                onChange={e => setBookerName(e.target.value)}
+                                {...form.getInputProps('bookerName')}
                             />
 
                             <TextInput
                                 className={classes.width}
                                 label="Antal filterpåsar"
                                 placeholder='1'
-                                required
-                                value={amount}
-                                onChange={e => setAmount(e.target.value)}
+                                {...form.getInputProps('amount')}
                             />
                         </Flex>
-
-                        {/* <Divider my='3rem' color='blue' /> */}
-
-                        {/* <Text mb='lg'>Här kan ni ändra leveransaddress.</Text> */}
 
                         <TextInput
                             mt='lg'
                             label="Adress"
                             placeholder="Stora gatan 13A"
-                            required
-                            value={bookingNumber}
-                            onChange={e => setBookingNumber(e.target.value)}
+                            {...form.getInputProps('address')}
                         />
 
                         <Flex className={classes.flex} gap='lg' mt='lg'>
@@ -150,9 +163,7 @@ const OrderView = ({ close }) => {
                                 w='100%'
                                 label="Ort"
                                 placeholder="Malmö"
-                                required
-                                value={bookerName}
-                                onChange={e => setBookerName(e.target.value)}
+                                {...form.getInputProps('county')}
                             />
 
                             <TextInput
@@ -160,9 +171,7 @@ const OrderView = ({ close }) => {
                                 // maw='30%'
                                 label="Postnummer"
                                 placeholder='111 22'
-                                required
-                                value={amount}
-                                onChange={e => setAmount(e.target.value)}
+                                {...form.getInputProps('zip')}
                             />
                         </Flex>
                     </div>
@@ -175,7 +184,7 @@ const OrderView = ({ close }) => {
             )}
             {next && (
                 <>
-                <Title className={classes.title}>Beställ filterkassetter</Title>
+                    <Title className={classes.title}>Beställ filterkassetter</Title>
 
                     <Paper className={classes.fields} h='70vh'>
                         <Text>Pitch här</Text>
@@ -183,7 +192,7 @@ const OrderView = ({ close }) => {
 
                     <Flex position="center" justify='space-between' mt="xl" className={classes.btnSection}>
                         <Button onClick={() => setNext(false)} variant="default">Tillbaka</Button>
-                        <Button type='submit'>Kontakta oss för mer information</Button>
+                        <Button type='submit' className={classes.nextBtn}>Kontakta oss för mer information</Button>
                     </Flex>
 
                 </>

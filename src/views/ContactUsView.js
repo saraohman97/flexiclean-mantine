@@ -137,10 +137,10 @@ const ContactUsView = () => {
 
     // functions will be used to validate values at corresponding key
     validate: {
-      name: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      subject: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
-      message: (value) => (value.length < 5 ? 'Name must have at least 5 letters and no more than 100 letters.' : null)
+      name: (value) => (value.length < 2 ? 'Namnet måste innehålla minst 2 karaktärer' : null),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Ogiltig email adress'),
+      subject: (value) => (value.length < 2 ? 'Måste innehålla minst 2 karatärer' : null),
+      message: (value) => (value.length < 5 ? 'Måste innehålla minst 5 karaktärer' : null)
     },
   });
 
