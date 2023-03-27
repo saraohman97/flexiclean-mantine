@@ -57,39 +57,6 @@
       "amount": "",
       "bookerName": "",
       "id": 6
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 7
-    }
-  ],
-  "contactInfo": [
-    {
-      "id": 2,
-      "icon": "fa-solid fa-phone",
-      "title": "Telefon nummer",
-      "description": "08-120 17 530"
-    },
-    {
-      "id": 3,
-      "icon": "fa-regular fa-address-book",
-      "title": "Address",
-      "description": "Brandthovdagatan 16 721 35 Västerås"
-    },
-    {
-      "id": 1,
-      "icon": "fa-solid fa-location-dot",
-      "title": "GPS",
-      "description": "WGS84: N 59° 36.9505', E 16° 36.5669' Decimal: 59.6158, 16.6094"
-    },
-    {
-      "id": 4,
-      "icon": "fa-solid fa-calendar-days",
-      "title": "Öppettider",
-      "description": "Vardagar 7.00 - 16.00"
     }
   ],
   "productSpecific": [

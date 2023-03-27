@@ -102,25 +102,41 @@ const useStyles = createStyles((theme) => {
   };
 });
 
+const contactInfo = [
+  {
+    id: 2,
+    icon: "fa-solid fa-phone",
+    title: "Telefon nummer",
+    description: "08-120 17 530"
+  },
+  {
+    id: 3,
+    icon: "fa-regular fa-address-book",
+    title: "Address",
+    description: "Brandthovdagatan 16 721 35 Västerås"
+  },
+  {
+    id: 1,
+    icon: "fa-solid fa-location-dot",
+    title: "GPS",
+    description: "WGS84: N 59° 36.9505', E 16° 36.5669' Decimal: 59.6158, 16.6094"
+  },
+  {
+    id: 4,
+    icon: "fa-solid fa-calendar-days",
+    title: "Öppettider",
+    description: "Vardagar 7.00 - 16.00"
+  }
+]
+
 const ContactUsView = () => {
   const { classes } = useStyles();
-  const [contactInfo, setContactInfo] = useState("");
 
   const [fullName, setFullName] = useState('')
   const [mail, setMail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:9000/contactInfo")
-      .then((res) => {
-        setContactInfo(res.data);
-      })
-  }, [])
-
-  if (!contactInfo) return null;
+  const [focused, setFocused] = useState(false)
 
 
   const handleSubmit = e => {
@@ -132,7 +148,6 @@ const ContactUsView = () => {
         console.log(response)
       })
   }
-
 
   return (
     <Container className={classes.wrapper}>
@@ -168,7 +183,8 @@ const ContactUsView = () => {
             <TextInput
               label="Din email"
               placeholder="hello@mantine.dev"
-              required value={mail}
+              required 
+              value={mail}
               onChange={e => setMail(e.target.value)}
             />
           </SimpleGrid>
