@@ -1,69 +1,7 @@
 {
   "contactUsForm": [
-    {
-      "data": {
-        "name": "Sim",
-        "email": "hej@gmail.com",
-        "subject": "Harley",
-        "message": "This is about harlay"
-      },
-      "id": 1
-    }
   ],
   "orderForm": [
-    {
-      "bookingNumber": "xx",
-      "password": "xx",
-      "amount": "",
-      "bookerName": "xx",
-      "id": 1
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 2
-    },
-    {
-      "data": {
-        "name": "",
-        "email": "",
-        "subject": "",
-        "message": ""
-      },
-      "id": 3
-    },
-    {
-      "data": {
-        "name": "",
-        "email": "",
-        "subject": "",
-        "message": ""
-      },
-      "id": 4
-    },
-    {
-      "data": {
-        "name": "",
-        "email": "",
-        "subject": "",
-        "message": ""
-      },
-      "id": 5
-    },
-    {
-      "data": {
-        "bookingNumber": "hd",
-        "password": "hd",
-        "bookerName": "jd",
-        "amount": "a",
-        "address": "kd",
-        "county": "d",
-        "zip": "d"
-      },
-      "id": 6
-    }
   ],
   "productSpecific": [
     {
