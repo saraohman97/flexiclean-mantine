@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {
   Text,
@@ -12,6 +11,7 @@ import {
   ActionIcon,
   Container,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 
 const useStyles = createStyles((theme) => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
@@ -132,22 +132,35 @@ const contactInfo = [
 const ContactUsView = () => {
   const { classes } = useStyles();
 
-  const [fullName, setFullName] = useState('')
-  const [mail, setMail] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
-  const [focused, setFocused] = useState(false)
+  const form = useForm({
+    initialValues: { name: '', email: '', subject: '', message: '' },
 
+    // functions will be used to validate values at corresponding key
+    validate: {
+      name: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      subject: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
+      message: (value) => (value.length < 5 ? 'Name must have at least 5 letters and no more than 100 letters.' : null)
+    },
+  });
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (data) => {
+    form.reset();
 
     axios
-      .post("http://localhost:9000/contactUsForm", { fullName, mail, subject, message })
+      .post("http://localhost:9000/contactUsForm", { data })
       .then(response => {
         console.log(response)
       })
-  }
+
+
+    // showNotification({
+    //   title: t('feedback.thank-you'),
+    //   message: t('feedback.your-feedback-has-been-sent!'),
+    //   autoClose: 2500,
+    // });
+    // navigate('/');
+  };
 
   return (
     <Container className={classes.wrapper}>
@@ -167,7 +180,7 @@ const ContactUsView = () => {
         ))}
       </div>
 
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={form.onSubmit((data) => handleSubmit(data))}>
         <Text size="lg" weight={700} className={classes.title}>
           Hör av dig
         </Text>
@@ -177,15 +190,12 @@ const ContactUsView = () => {
             <TextInput
               label="Ditt namn"
               placeholder="Ditt namn"
-              value={fullName}
-              onChange={e => setFullName(e.target.value)}
+              {...form.getInputProps('name')}
             />
             <TextInput
               label="Din email"
               placeholder="hello@mantine.dev"
-              required 
-              value={mail}
-              onChange={e => setMail(e.target.value)}
+              {...form.getInputProps('email')}
             />
           </SimpleGrid>
 
@@ -193,9 +203,7 @@ const ContactUsView = () => {
             mt="md"
             label="Ämne"
             placeholder="Ämne"
-            required
-            value={subject}
-            onChange={e => setSubject(e.target.value)}
+            {...form.getInputProps('subject')}
           />
 
           <Textarea
@@ -203,8 +211,7 @@ const ContactUsView = () => {
             label="Ditt meddelande"
             placeholder="Var snäll inkludera relevant information"
             minRows={3}
-            value={message}
-            onChange={e => setMessage(e.target.value)}
+            {...form.getInputProps('message')}
           />
 
           <Group position="right" mt="md">

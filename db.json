@@ -1,18 +1,13 @@
 {
   "contactUsForm": [
     {
-      "fullName": "har",
-      "mail": "har@mail.com",
-      "subject": "Doe ",
-      "message": "dalkn lkdksal dlkas lkds alk dlask d",
+      "data": {
+        "name": "Sim",
+        "email": "hej@gmail.com",
+        "subject": "Harley",
+        "message": "This is about harlay"
+      },
       "id": 1
-    },
-    {
-      "fullName": "Madde",
-      "mail": "Blu",
-      "subject": "mail@mail.com",
-      "message": "I want to order. ",
-      "id": 2
     }
   ],
   "orderForm": [
@@ -22,41 +17,6 @@
       "amount": "",
       "bookerName": "xx",
       "id": 1
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 2
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 3
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 4
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 5
-    },
-    {
-      "bookingNumber": "",
-      "password": "",
-      "amount": "",
-      "bookerName": "",
-      "id": 6
     }
   ],
   "productSpecific": [
